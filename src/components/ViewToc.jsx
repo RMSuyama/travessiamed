@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { List, X } from 'lucide-react';
+import { scrollToView } from '../utils/viewNavigation';
 
 const pageToc = [
   { id: 'inicio', label: 'Início' },
@@ -7,24 +8,16 @@ const pageToc = [
   { id: 'universidades', label: 'Universidades' },
   { id: 'comparativo', label: 'Brasil vs Paraguai' },
   { id: 'custo', label: 'Custo de vida' },
+  { id: 'instalacao', label: 'Mudança e reparos' },
+  { id: 'parceiros', label: 'Seja parceiro' },
   { id: 'calculadora', label: 'Simulador' },
   { id: 'pilares', label: 'Como funciona' },
   { id: 'familia', label: 'Espaço da família' },
   { id: 'depoimentos', label: 'Alunos' },
   { id: 'formulario', label: 'Pré-matrícula' },
   { id: 'faq', label: 'Dúvidas' },
+  { id: 'privacidade', label: 'Privacidade' },
 ];
-
-function scrollToView(id) {
-  const el = document.getElementById(id);
-  if (!el) return;
-  const offset = parseInt(
-    getComputedStyle(document.documentElement).getPropertyValue('--view-offset'),
-    10
-  ) || 88;
-  const top = window.scrollY + el.getBoundingClientRect().top - offset;
-  window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
-}
 
 export default function ViewToc() {
   const [activeId, setActiveId] = useState('inicio');

@@ -6,12 +6,15 @@ import MythsAndFacts from './components/MythsAndFacts';
 import Universities from './components/Universities';
 import Comparison from './components/Comparison';
 import CostOfLiving from './components/CostOfLiving';
+import StudentSetupServices from './components/StudentSetupServices';
+import PartnerNetwork from './components/PartnerNetwork';
 import SavingsCalculator from './components/SavingsCalculator';
 import ProcessSteps from './components/ProcessSteps';
 import ParentsSupport from './components/ParentsSupport';
 import Testimonials from './components/Testimonials';
 import LeadForm from './components/LeadForm';
 import Faq from './components/Faq';
+import LegalCenter from './components/LegalCenter';
 import Footer from './components/Footer';
 import WhatsAppFloating from './components/WhatsAppFloating';
 import ViewToc from './components/ViewToc';
@@ -34,12 +37,15 @@ export default function App() {
       <Universities />
       <Comparison />
       <CostOfLiving />
+      <StudentSetupServices />
+      <PartnerNetwork />
       <SavingsCalculator />
       <ProcessSteps />
       <ParentsSupport />
       <Testimonials />
       <LeadForm />
       <Faq />
+      <LegalCenter />
       <Footer />
 
       <WhatsAppFloating />

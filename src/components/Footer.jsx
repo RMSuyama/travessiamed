@@ -46,7 +46,9 @@ export default function Footer() {
               <li><a href="#universidades" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Medicina UNADES</a></li>
               <li><a href="#comparativo" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Comparativo de Custos</a></li>
               <li><a href="#pilares" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Assessoria Documental & Visto</a></li>
+              <li><a href="#parceiros" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Faça parte da rede de parceiros</a></li>
               <li><a href="#faq" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Dúvidas sobre o Revalida</a></li>
+              <li><a href="#privacidade" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Privacidade, LGPD e Termos</a></li>
             </ul>
           </div>
 

@@ -164,12 +164,20 @@ export default function LeadForm() {
                 </select>
               </div>
 
+              <label className="data-consent">
+                <input type="checkbox" required />
+                <span>
+                  Li a <a href="#privacidade">Política de Privacidade</a> e autorizo o
+                  tratamento dos dados para responder esta solicitação e realizar o contato.
+                </span>
+              </label>
+
               <button type="submit" className="btn btn-primary" style={{ padding: '16px', fontSize: '1.05rem', marginTop: '8px' }}>
                 Garantir Atendimento & Receber Informações <ArrowRight size={18} />
               </button>
 
               <div style={{ textAlign: 'center', fontSize: '0.8rem', color: 'var(--text-muted)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}>
-                <ShieldCheck size={16} color="var(--success)" /> Seus dados estão seguros e protegidos. Respeitamos a sua privacidade.
+                <ShieldCheck size={16} color="var(--success)" /> O envio será concluído pelo WhatsApp, conforme nossa política de privacidade.
               </div>
 
             </form>

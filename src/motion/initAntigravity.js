@@ -1,19 +1,25 @@
+import { getViewOffset } from '../utils/viewNavigation';
+
 function prefersReducedMotion() {
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 }
 
-function headerOffset() {
-  const header = document.querySelector('header');
-  return header ? Math.round(header.getBoundingClientRect().height) : 70;
-}
-
 function syncViewOffset() {
-  document.documentElement.style.setProperty('--view-offset', `${headerOffset()}px`);
+  document.documentElement.style.setProperty('--view-offset', `${getViewOffset()}px`);
 }
 
 function bindViewSnap(frames) {
   let idle;
   let snapping = false;
+  let navigationRelease;
+
+  const holdSnapForNavigation = () => {
+    snapping = true;
+    window.clearTimeout(navigationRelease);
+    navigationRelease = window.setTimeout(() => {
+      snapping = false;
+    }, 850);
+  };
 
   const settleOnFrame = () => {
     if (snapping || prefersReducedMotion()) return;
@@ -21,7 +27,7 @@ function bindViewSnap(frames) {
     const active = document.activeElement;
     if (active && /^(INPUT|TEXTAREA|SELECT)$/.test(active.tagName)) return;
 
-    const offset = headerOffset();
+    const offset = getViewOffset();
     const band = Math.min(window.innerHeight * 0.4, 320);
     let nearest = null;
     let distance = Infinity;
@@ -51,11 +57,14 @@ function bindViewSnap(frames) {
   };
 
   syncViewOffset();
+  window.addEventListener('view-navigation-start', holdSnapForNavigation);
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', syncViewOffset);
 
   return () => {
     window.clearTimeout(idle);
+    window.clearTimeout(navigationRelease);
+    window.removeEventListener('view-navigation-start', holdSnapForNavigation);
     window.removeEventListener('scroll', onScroll);
     window.removeEventListener('resize', syncViewOffset);
   };
@@ -109,7 +118,15 @@ function bindViewFit(frames) {
         frame.style.minHeight = `${targetHeight}px`;
 
         const availableContent = targetHeight - viewPadding * 2;
-        const scale = Math.min(1, availableContent / naturalHeight);
+        const idealScale = Math.min(1, availableContent / naturalHeight);
+        const scale = Math.max(0.88, idealScale);
+        const readableHeight = Math.ceil(naturalHeight * scale + viewPadding * 2);
+
+        if (readableHeight > targetHeight) {
+          frame.style.height = `${readableHeight}px`;
+          frame.style.minHeight = `${readableHeight}px`;
+        }
+
         content.style.setProperty('--view-scale', scale.toFixed(4));
       });
     });

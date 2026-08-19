@@ -241,6 +241,10 @@ export const siteConfig = {
       a: "Temos um canal direto e exclusivo para pais e responsáveis, com relatórios de status da documentação, visitas guiadas às faculdades e suporte presencial na recepção e escolha de moradia em Foz do Iguaçu."
     },
     {
+      q: "A Travessia Med também faz mudança e pequenos reparos?",
+      a: "Ajudamos a conectar o estudante a prestadores locais para carreto, mudança, montagem de móveis e pequenos ajustes residenciais. Esses serviços são executados por parceiros independentes, dependem de disponibilidade e possuem orçamento separado da assessoria educacional."
+    },
+    {
       q: "É possível fazer transferência se já iniciei outro curso na área da saúde?",
       a: "Sim! Se você já cursou períodos de Medicina, Biomedicina, Enfermagem, Farmácia ou Fisioterapia, fazemos a análise de ementas para dispensar disciplinas equivalentes."
     }
