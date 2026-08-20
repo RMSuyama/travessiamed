@@ -35,8 +35,8 @@ export const siteConfig = {
     whatsappButtonText: "Falar com um Orientador",
     trustChecks: [
       "Ingresso sem vestibular tradicional",
-      "UNADES a partir de R$ 1.500; UCP desde R$ 1.825 no 1º semestre",
-      "Suporte completo para pais e alunos",
+      "UNADES a partir de R$ 1.500; UCP desde R$ 1.840 no 1º semestre",
+      "UCP com Hospital Universitário próprio em CDE",
       "Você pode morar em Foz do Iguaçu (PR)"
     ],
     infoCard: {
@@ -44,8 +44,34 @@ export const siteConfig = {
       partnerUnis: "UCP & UNADES",
       classLocations: "Ciudad del Este / PJC",
       docSupport: "Acolhimento & Legal 100% Incluso"
-    }
+    },
+    photo: "/campaign/ucp-hospital.jpg",
+    photoAlt: "Hospital Universitário da UCP em Ciudad del Este"
   },
+
+  campaignGallery: [
+    {
+      src: "/campaign/ucp-alunos.jpg",
+      alt: "Alunos de Medicina da UCP em Ciudad del Este",
+      kicker: "Sem vestibular",
+      caption: "Matrículas 2026.2 abertas",
+      objectPosition: "50% 28%"
+    },
+    {
+      src: "/campaign/ucp-hospital.jpg",
+      alt: "Hospital Universitário próprio da UCP",
+      kicker: "Hospital próprio",
+      caption: "Prática real em CDE",
+      objectPosition: "50% 46%"
+    },
+    {
+      src: "/campaign/ucp-pratica.jpg",
+      alt: "Estudante de Medicina da UCP com jaleco",
+      kicker: "Teoria e prática",
+      caption: "Formação desde o 1º semestre",
+      objectPosition: "78% 22%"
+    }
+  ],
 
   // Mitos e Verdades para quebrar objeções imediatas
   mythsAndFacts: [
@@ -71,8 +97,8 @@ export const siteConfig = {
   costOfLiving: [
     {
       item: "Mensalidade da Faculdade",
-      value: "UNADES: a partir de R$ 1.500 · UCP: R$ 1.825 no 1º semestre",
-      detail: "Na UCP 2026.1, o valor promocional divulgado para o 1º semestre é R$ 1.641,67. Valores em reais são estimativas cambiais."
+      value: "UNADES: a partir de R$ 1.500 · UCP: R$ 1.840 no 1º semestre",
+      detail: "Matrícula UCP 2026.2: R$ 1.800 (única). Com desconto, o 1º semestre fica R$ 1.655 (câmbio 1.190 Gs/R$)."
     },
     {
       item: "Moradia (Kitnet ou Apto Compartilhado)",
@@ -100,16 +126,19 @@ export const siteConfig = {
       badgeColor: "#d32f2f",
       badgeBg: "rgba(211, 47, 47, 0.1)",
       avatarBg: "#fef2f2",
-      description: "Uma das maiores referências médicas do Paraguai. Conta com mesa anatômica 3D (Anatomage), amplos laboratórios de microbiologia e histologia, além de clínicas universitárias que atendem à comunidade e proporcionam prática médica intensa desde os primeiros anos.",
+      description: "Uma das maiores referências médicas da fronteira, com Hospital Universitário próprio em Ciudad del Este. Conta com mesa anatômica 3D (Anatomage), laboratórios de microbiologia e histologia, e prática clínica real desde os primeiros semestres — teoria e prática juntas.",
       highlights: [
         { label: "Sedes", value: "Ciudad del Este (fronteira com Foz do Iguaçu) e Pedro Juan Caballero" },
-        { label: "Prática Clínica", value: "Clínicas universitárias próprias e ambulatórios" },
-        { label: "Metodologia", value: "Preparação contínua voltada ao médico generalista e Revalida" }
+        { label: "Prática Clínica", value: "Hospital Universitário próprio em CDE, clínicas e ambulatórios" },
+        { label: "Metodologia", value: "Teoria e prática desde o 1º semestre, com preparação ao Revalida" }
       ],
-      estimatedMonthlyBRL: 1825,
-      monthlyLabel: "R$ 1.825",
-      monthlyDiscountLabel: "R$ 1.641,67 com desconto",
-      pricingReference: "1º semestre · tabela UCP 2026.1",
+      estimatedMonthlyBRL: 1840,
+      monthlyLabel: "R$ 1.840",
+      monthlyDiscountLabel: "R$ 1.655 com desconto",
+      pricingReference: "1º semestre · tabela UCP 2026.2 · câmbio 1.190",
+      photo: "/campaign/ucp-ingresso.jpg",
+      photoAlt: "Campus, laboratório e alunos da Medicina UCP",
+      photoPosition: "50% 42%",
       buttonText: "Conhecer a UCP"
     },
     {
@@ -141,7 +170,7 @@ export const siteConfig = {
     {
       aspect: "Mensalidade",
       brazil: "✕ R$ 10.000 a R$ 14.000 / mês (valor fixo desde o 1º ano)",
-      paraguay: "✓ UNADES a partir de R$ 1.500; UCP de R$ 1.825 a R$ 3.575 conforme o semestre (referência 2026.1)"
+      paraguay: "✓ UNADES a partir de R$ 1.500; UCP de R$ 1.840 a R$ 3.605 conforme o semestre (referência 2026.2)"
     },
     {
       aspect: "Investimento em 6 Anos",
@@ -233,16 +262,20 @@ export const siteConfig = {
       a: "É a rotina da maioria dos brasileiros! Foz do Iguaçu e Ciudad del Este são cidades vizinhas separadas pela Ponte da Amizade. Existem vans estudantis que buscam os alunos na porta de casa em Foz e deixam na faculdade em 15 a 25 minutos com faixa exclusiva de travessia."
     },
     {
-      q: "Quais documentos preciso providenciar para a assessoria?",
-      a: "Você só precisa nos enviar: Certidão de Nascimento/Casamento, Histórico e Certificado do Ensino Médio, RG, Título de Eleitor e Certidão de Antecedentes Criminais. Toda a parte complexa (Apostila de Haia, convalidações diplomáticas no Paraguai e visto) é feita pela nossa equipe jurídica."
+      q: "Quais documentos preciso providenciar para a matrícula na UCP?",
+      a: "A lista oficial da UCP CDE (2026.2) pede: cópia do RG; histórico escolar do ensino médio (original ou cópia autenticada); cópia da certidão de nascimento; CPF; celular, endereço e e-mail do aluno e do responsável; e antecedentes criminais. A Travessia Med cuida da Apostila de Haia, convalidações diplomáticas no Paraguai e visto."
+    },
+    {
+      q: "Quanto custa a matrícula na UCP?",
+      a: "A taxa de matrícula divulgada pela UCP CDE para 2026.2 é R$ 1.800. Ela é cobrada uma vez, à parte da mensalidade. No 1º semestre, a mensalidade regular é cerca de R$ 1.840 (R$ 1.655 com desconto promocional, câmbio 1.190 Gs por R$ 1,00)."
     },
     {
       q: "Como os pais podem acompanhar o processo?",
       a: "Temos um canal direto e exclusivo para pais e responsáveis, com relatórios de status da documentação, visitas guiadas às faculdades e suporte presencial na recepção e escolha de moradia em Foz do Iguaçu."
     },
     {
-      q: "A Travessia Med também faz mudança e pequenos reparos?",
-      a: "Ajudamos a conectar o estudante a prestadores locais para carreto, mudança, montagem de móveis e pequenos ajustes residenciais. Esses serviços são executados por parceiros independentes, dependem de disponibilidade e possuem orçamento separado da assessoria educacional."
+      q: "A Travessia Med também ajuda com carreto e mudança?",
+      a: "Ajudamos a conectar o estudante a prestadores locais para carreto e mudança. Esses serviços são executados por parceiros independentes, dependem de disponibilidade e possuem orçamento separado da assessoria educacional."
     },
     {
       q: "É possível fazer transferência se já iniciei outro curso na área da saúde?",

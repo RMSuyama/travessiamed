@@ -1,6 +1,7 @@
 import React from 'react';
 import { Building2, CheckCircle2 } from 'lucide-react';
 import { siteConfig } from '../data/siteContent';
+import CampaignFilm from './CampaignFilm';
 
 export default function Universities() {
   return (
@@ -20,12 +21,14 @@ export default function Universities() {
           </p>
         </div>
 
+        <CampaignFilm />
+
         <div className="uni-frames">
           {siteConfig.universities.map((uni, uniIndex) => (
             <React.Fragment key={uni.id}>
             {uniIndex > 0 && <div className="trama-vertical" aria-hidden="true" />}
             <div
-              className="card-clean"
+              className={`card-clean${uni.photo ? ' has-photo' : ''}`}
               style={{
                 border: `2px solid ${uni.badgeBg}`,
                 display: 'flex',
@@ -33,6 +36,16 @@ export default function Universities() {
                 justifyContent: 'space-between'
               }}
             >
+              {uni.photo && (
+                <figure className="uni-photo">
+                  <img
+                    src={uni.photo}
+                    alt={uni.photoAlt}
+                    loading="lazy"
+                    style={{ objectPosition: uni.photoPosition || 'center' }}
+                  />
+                </figure>
+              )}
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '20px', gap: '12px' }}>
                   <div>

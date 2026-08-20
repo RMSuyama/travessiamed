@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Calculator } from 'lucide-react';
 
-// Valores mensais estimados em reais divulgados pela UCP para 2026.1.
+// Valores mensais estimados em reais divulgados pela UCP para 2026.2 (câmbio 1.190).
 // Os valores oficiais são fixados em guaranis e variam em reais conforme o câmbio.
+// 7º semestre: R$ 2.765 = 3.290.000 Gs / 1.190 (o flyer promocional repetiu R$ 2.512 por engano).
 const UCP_2026_SEMESTER_TUITION = [
-  1825, 1908.33, 2075, 2158.33, 2375, 2491.67,
-  2741.67, 2908.33, 3241.67, 3325, 3575, 3575
+  1840, 1924, 2092, 2176, 2394, 2512,
+  2765, 2932, 3268, 3352, 3605, 3605
 ];
 
 const PROGRESSIVE_TUITION = Array.from({ length: 6 }, (_, year) => {
@@ -39,8 +40,8 @@ export default function SavingsCalculator() {
               Quanto você economiza cursando no Paraguai?
             </h2>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
-              Na tabela UCP 2026.1, a mensalidade começa em <strong>R$ 1.825/mês</strong>{' '}
-              no 1º semestre e chega a <strong>R$ 3.575/mês</strong> no 6º ano.
+              Na tabela UCP 2026.2, a mensalidade começa em <strong>R$ 1.840/mês</strong>{' '}
+              no 1º semestre e chega a <strong>R$ 3.605/mês</strong> no 6º ano.
               A tabela abaixo usa a média de cada ano.
             </p>
           </div>
@@ -84,7 +85,7 @@ export default function SavingsCalculator() {
                     color: 'var(--text-secondary)',
                     textAlign: 'left'
                   }}>
-                    🇵🇾 UCP 2026.1
+                    🇵🇾 UCP 2026.2
                   </td>
                   {PROGRESSIVE_TUITION.map((val, i) => (
                     <td key={i} style={{
@@ -168,7 +169,7 @@ export default function SavingsCalculator() {
               <div style={{ fontSize: '1.25rem', fontWeight: '800', color: '#5ee0bf' }}>
                 R$ {pyTotal6Years.toLocaleString('pt-BR')}
               </div>
-              <div style={{ fontSize: '0.75rem', color: 'var(--on-dark-muted)' }}>tabela regular UCP 2026.1</div>
+              <div style={{ fontSize: '0.75rem', color: 'var(--on-dark-muted)' }}>tabela regular UCP 2026.2</div>
             </div>
 
             <div style={{ borderLeft: '1px solid rgba(255, 255, 255, 0.15)', paddingLeft: '16px' }}>
@@ -198,7 +199,7 @@ export default function SavingsCalculator() {
             borderTop: '1px solid rgba(61, 99, 255, 0.24)',
             paddingTop: '16px'
           }}>
-            ⚠️ <strong>Aviso importante:</strong> A UCP fixa os valores originais em guaranis. Os valores em reais são apenas estimativas calculadas pela instituição com câmbio de 1.200 Gs. por R$ 1,00 e podem variar. Referência: tabela 2026.1, publicada em 11/09/2025. Descontos promocionais não foram considerados no total.
+            ⚠️ <strong>Aviso importante:</strong> A UCP fixa os valores originais em guaranis. Os valores em reais são estimativas da tabela oficial 2026.2 com câmbio de 1.190 Gs por R$ 1,00 e podem variar. Matrícula à parte: R$ 1.800. Descontos promocionais não foram considerados no total.
           </p>
 
         </div>

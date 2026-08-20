@@ -1,16 +1,54 @@
-# React + Vite
+# Travessia Med
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Site institucional e de captação da Travessia Med, construído com React, Vite e
+Supabase.
 
-Currently, two official plugins are available:
+## Desenvolvimento
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install
+npm run dev
+```
 
-## React Compiler
+Os formulários gravam direto na API REST do Supabase (`/rest/v1/contacts`).
+Não há função serverless no Vercel.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Rotas
 
-## Expanding the Oxlint configuration
+- `/` — jornada acadêmica e formulário de admissão
+- `/servicos` — carreto e mudança
+- `/parceiros` — cadastro de prestadores
+- `/privacidade` — privacidade, LGPD e termos
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+A rota `/shark` não aparece no menu. É o acesso interno aos contatos.
+
+## Formulários no Supabase
+
+No SQL Editor do Supabase, execute `supabase/schema.sql` uma vez. Depois, no
+Vercel e no `.env` local, use as variáveis de `.env.example`:
+
+- `VITE_SUPABASE_URL` — `https://ihgwaqnrnohbqmjlrgyp.supabase.co`
+- `VITE_SUPABASE_ANON_KEY` — chave `anon` / `publishable` do projeto
+- `VITE_TURNSTILE_SITE_KEY` — chave pública do widget Turnstile
+
+Use só a chave anônima no frontend. A service role fica no painel do Supabase.
+Os registros aparecem no painel `/shark`. O contato com o lead segue pelo WhatsApp.
+
+### Acesso interno (`/shark`)
+
+O painel entra com **e-mail e senha** do usuário criado em Authentication → Users.
+
+1. Execute de novo o `supabase/schema.sql` no SQL Editor (libera leitura para quem está autenticado).
+2. Em Authentication → Providers, deixe **Email** ligado.
+3. No usuário criado, marque o e-mail como confirmado (ou crie com Auto Confirm).
+4. Abra `/shark` e entre com esse e-mail e senha.
+
+Não coloque valores secretos em arquivos versionados. Após alterar uma variável
+com prefixo `VITE_`, faça um novo deployment para incorporá-la ao frontend.
+
+## Verificação
+
+```bash
+npm run lint
+npm run build
+```

@@ -1,54 +1,63 @@
 import React, { useEffect } from 'react';
+import { Navigate, Outlet, Route, Routes, useLocation } from 'react-router-dom';
 import TopBar from './components/TopBar';
 import Header from './components/Header';
-import Hero from './components/Hero';
-import MythsAndFacts from './components/MythsAndFacts';
-import Universities from './components/Universities';
-import Comparison from './components/Comparison';
-import CostOfLiving from './components/CostOfLiving';
-import StudentSetupServices from './components/StudentSetupServices';
-import PartnerNetwork from './components/PartnerNetwork';
-import SavingsCalculator from './components/SavingsCalculator';
-import ProcessSteps from './components/ProcessSteps';
-import ParentsSupport from './components/ParentsSupport';
-import Testimonials from './components/Testimonials';
-import LeadForm from './components/LeadForm';
-import Faq from './components/Faq';
-import LegalCenter from './components/LegalCenter';
 import Footer from './components/Footer';
 import WhatsAppFloating from './components/WhatsAppFloating';
-import ViewToc from './components/ViewToc';
+import HomePage from './pages/HomePage';
+import ServicesPage from './pages/ServicesPage';
+import PartnersPage from './pages/PartnersPage';
+import PrivacyPage from './pages/PrivacyPage';
+import SharkPage from './pages/SharkPage';
 import { initAntigravity } from './motion/initAntigravity';
+import { scrollToView } from './utils/viewNavigation';
 
-export default function App() {
+function SiteLayout() {
+  const location = useLocation();
+
   useEffect(() => {
-    const teardown = initAntigravity(document);
-    return teardown;
-  }, []);
+    let teardown;
+    const animationFrame = window.requestAnimationFrame(() => {
+      teardown = initAntigravity(document);
+      const targetId = location.hash.replace('#', '');
+
+      if (targetId) {
+        window.requestAnimationFrame(() => scrollToView(targetId));
+      } else {
+        window.scrollTo({ top: 0, behavior: 'auto' });
+      }
+    });
+
+    return () => {
+      window.cancelAnimationFrame(animationFrame);
+      teardown?.();
+    };
+  }, [location.pathname, location.hash]);
 
   return (
-    <div className="app-root">
+    <div className={`app-root${location.pathname === '/' ? ' has-view-toc' : ''}`}>
       <TopBar />
       <Header />
-      <ViewToc />
-
-      <Hero />
-      <MythsAndFacts />
-      <Universities />
-      <Comparison />
-      <CostOfLiving />
-      <StudentSetupServices />
-      <PartnerNetwork />
-      <SavingsCalculator />
-      <ProcessSteps />
-      <ParentsSupport />
-      <Testimonials />
-      <LeadForm />
-      <Faq />
-      <LegalCenter />
+      <main>
+        <Outlet />
+      </main>
       <Footer />
-
       <WhatsAppFloating />
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <Routes>
+      <Route path="shark" element={<SharkPage />} />
+      <Route element={<SiteLayout />}>
+        <Route index element={<HomePage />} />
+        <Route path="servicos" element={<ServicesPage />} />
+        <Route path="parceiros" element={<PartnersPage />} />
+        <Route path="privacidade" element={<PrivacyPage />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Route>
+    </Routes>
   );
 }

@@ -1,5 +1,6 @@
 import React from 'react';
-import { CalendarCheck2, Truck, Wrench } from 'lucide-react';
+import { CalendarCheck2, Truck } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { siteConfig } from '../data/siteContent';
 
 const services = [
@@ -9,13 +10,6 @@ const services = [
     description: 'Coleta e transporte de malas, caixas, móveis e eletrodomésticos entre Foz do Iguaçu e Ciudad del Este.',
     color: 'var(--crossing)',
     background: 'var(--crossing-soft)'
-  },
-  {
-    icon: Wrench,
-    title: 'Montagem e pequenos reparos',
-    description: 'Montagem de móveis e ajustes residenciais simples para deixar o apartamento pronto para a rotina de estudos.',
-    color: 'var(--signal-dark)',
-    background: 'var(--gold-subtle)'
   },
   {
     icon: CalendarCheck2,
@@ -28,13 +22,14 @@ const services = [
 
 export default function StudentSetupServices() {
   const message = encodeURIComponent(
-    'Olá! Gostaria de solicitar um orçamento para carreto, mudança ou pequenos reparos.'
+    'Olá! Gostaria de solicitar um orçamento para carreto ou mudança.'
   );
   const whatsappUrl = `https://wa.me/${siteConfig.contact.whatsappNumber}?text=${message}`;
 
   return (
     <section id="instalacao" className="frame frame-white">
       <div className="container">
+        <Link to="/" className="route-back-link">← Voltar para Medicina no Paraguai</Link>
         <div className="section-intro">
           <div className="badge-pill badge-green">
             <Truck size={16} />
@@ -47,7 +42,7 @@ export default function StudentSetupServices() {
           </p>
         </div>
 
-        <div className="grid-3" style={{ marginBottom: '24px' }}>
+        <div className="grid-2" style={{ marginBottom: '24px' }}>
           {services.map(({ icon: Icon, title, description, color, background }) => (
             <article key={title} className="card-clean">
               <div style={{
@@ -74,9 +69,9 @@ export default function StudentSetupServices() {
             Disponibilidade e valores variam conforme endereço e demanda.
           </p>
           <div className="service-partner-actions">
-            <a href="#parceiros" className="btn btn-navy">
+            <Link to="/parceiros" className="btn btn-navy">
               Quero ser parceiro
-            </a>
+            </Link>
             <a
               href={whatsappUrl}
               className="btn btn-whatsapp"

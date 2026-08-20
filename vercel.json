@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    { "source": "/servicos", "destination": "/index.html" },
+    { "source": "/parceiros", "destination": "/index.html" },
+    { "source": "/privacidade", "destination": "/index.html" },
+    { "source": "/shark", "destination": "/index.html" }
+  ]
+}

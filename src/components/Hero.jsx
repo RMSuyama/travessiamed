@@ -7,6 +7,13 @@ export default function Hero() {
 
   return (
     <section id="inicio" className="frame frame-navy-dark is-revealed hero-frame">
+      <img
+        className="hero-photo"
+        src={siteConfig.hero.photo}
+        alt=""
+        aria-hidden="true"
+      />
+      <div className="hero-photo-veil" aria-hidden="true" />
       <svg className="border-route" viewBox="0 0 760 640" aria-hidden="true">
         <path className="border-route-line" d="M48 540C174 472 194 348 330 326C476 302 466 152 700 88" />
         <path className="border-route-bridge" d="M286 348L378 286M302 368L394 306M318 388L410 326" />
@@ -30,6 +37,7 @@ export default function Hero() {
             <p className="hero-desc">
               Estude em Ciudad del Este, more em Foz do Iguaçu e conte com uma equipe
               presente em cada etapa — da matrícula ao preparo para o CRM.
+              Na UCP, a prática acontece em Hospital Universitário próprio.
             </p>
 
             <div className="hero-actions">
@@ -60,7 +68,7 @@ export default function Hero() {
               </div>
               <div>
                 <dt>Mensalidade</dt>
-                <dd>Desde R$ 1.500 · UCP R$ 1.825</dd>
+                <dd>Desde R$ 1.500 · UCP R$ 1.840</dd>
               </div>
               <div>
                 <dt>Turmas</dt>

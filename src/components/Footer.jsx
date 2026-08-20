@@ -1,5 +1,6 @@
 import React from 'react';
 import { MapPin, Phone } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { siteConfig } from '../data/siteContent';
 
 export default function Footer() {
@@ -42,13 +43,14 @@ export default function Footer() {
           <div>
             <h4 style={{ color: '#ffffff', fontSize: '1rem', marginBottom: '16px' }}>Links Rápidos</h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.9rem' }}>
-              <li><a href="#universidades" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Universidade UCP (Ley 3153/06)</a></li>
-              <li><a href="#universidades" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Medicina UNADES</a></li>
-              <li><a href="#comparativo" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Comparativo de Custos</a></li>
-              <li><a href="#pilares" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Assessoria Documental & Visto</a></li>
-              <li><a href="#parceiros" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Faça parte da rede de parceiros</a></li>
-              <li><a href="#faq" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Dúvidas sobre o Revalida</a></li>
-              <li><a href="#privacidade" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Privacidade, LGPD e Termos</a></li>
+              <li><Link to="/#universidades" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Universidade UCP (Ley 3153/06)</Link></li>
+              <li><Link to="/#universidades" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Medicina UNADES</Link></li>
+              <li><Link to="/#comparativo" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Comparativo de Custos</Link></li>
+              <li><Link to="/#pilares" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Assessoria Documental & Visto</Link></li>
+              <li><Link to="/servicos" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Carreto e mudança</Link></li>
+              <li><Link to="/parceiros" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Faça parte da rede de parceiros</Link></li>
+              <li><Link to="/#faq" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Dúvidas sobre o Revalida</Link></li>
+              <li><Link to="/privacidade" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Privacidade, LGPD e Termos</Link></li>
             </ul>
           </div>
 

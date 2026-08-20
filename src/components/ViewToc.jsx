@@ -8,15 +8,12 @@ const pageToc = [
   { id: 'universidades', label: 'Universidades' },
   { id: 'comparativo', label: 'Brasil vs Paraguai' },
   { id: 'custo', label: 'Custo de vida' },
-  { id: 'instalacao', label: 'Mudança e reparos' },
-  { id: 'parceiros', label: 'Seja parceiro' },
   { id: 'calculadora', label: 'Simulador' },
   { id: 'pilares', label: 'Como funciona' },
   { id: 'familia', label: 'Espaço da família' },
   { id: 'depoimentos', label: 'Alunos' },
   { id: 'formulario', label: 'Pré-matrícula' },
   { id: 'faq', label: 'Dúvidas' },
-  { id: 'privacidade', label: 'Privacidade' },
 ];
 
 export default function ViewToc() {
