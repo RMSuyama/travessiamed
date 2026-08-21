@@ -1,5 +1,6 @@
 import React from 'react';
 import { ShieldCheck, FileText, Home, HeartPulse } from 'lucide-react';
+import Link from 'next/link';
 import { siteConfig } from '../data/siteContent';
 
 export default function ProcessSteps() {
@@ -19,11 +20,11 @@ export default function ProcessSteps() {
             <ShieldCheck size={16} />
             <span>Cuidado Integral de Ponta a Ponta</span>
           </div>
-          <h2 style={{ marginBottom: '16px' }}>
-            Como a Travessia Med Cuida de Tudo Para Você
+          <h2 style={{ marginBottom: '12px' }}>
+            Como funciona
           </h2>
           <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)' }}>
-            Nossa missão é eliminar toda a complexidade para que sua única preocupação seja estudar e se formar médico.
+            Quatro etapas. Você estuda. A gente resolve o resto.
           </p>
         </div>
 
@@ -56,6 +57,10 @@ export default function ProcessSteps() {
             );
           })}
         </div>
+
+        <Link href="/familia" className="section-continue">
+          Espaço da família: canal para pais e responsáveis →
+        </Link>
 
       </div>
     </section>

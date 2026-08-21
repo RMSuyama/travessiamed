@@ -1,8 +1,9 @@
 import React from 'react';
 import { DollarSign, Home, Coffee, Bus, GraduationCap } from 'lucide-react';
 import { siteConfig } from '../data/siteContent';
+import PageBack from './PageBack';
 
-export default function CostOfLiving() {
+export default function CostOfLiving({ showBack = false }) {
   const iconMap = [
     <GraduationCap key="graduation" size={22} color="var(--navy-primary)" />,
     <Home key="home" size={22} color="var(--crossing)" />,
@@ -13,6 +14,7 @@ export default function CostOfLiving() {
   return (
     <section id="custo" className="frame frame-cream-gold">
       <div className="container">
+        {showBack && <PageBack />}
         <div className="section-intro">
           <div className="badge-pill badge-gold" style={{ marginBottom: '12px' }}>
             <DollarSign size={16} />
@@ -62,8 +64,14 @@ export default function CostOfLiving() {
           <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', maxWidth: '700px', margin: '0 auto 20px' }}>
             Isso inclui <strong>faculdade, moradia, alimentação e transporte</strong>. No Brasil, apenas a mensalidade de uma faculdade privada custa mais que o triplo disso!
           </p>
-          <a href="#formulario" className="btn btn-primary" style={{ padding: '12px 28px' }}>
-            Quero Receber o Orçamento Detalhado
+            <a
+              href={`https://wa.me/${siteConfig.contact.whatsappNumber}?text=${encodeURIComponent(siteConfig.contact.whatsappMessage)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-whatsapp"
+              style={{ padding: '12px 28px' }}
+            >
+            Quero o orçamento no WhatsApp
           </a>
           <p style={{
             marginTop: '16px',

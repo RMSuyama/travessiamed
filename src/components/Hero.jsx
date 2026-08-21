@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, MessageCircle, CheckCircle2 } from 'lucide-react';
+import { MessageCircle, CheckCircle2 } from 'lucide-react';
 import { siteConfig } from '../data/siteContent';
 
 export default function Hero() {
@@ -30,22 +30,20 @@ export default function Hero() {
         <div className="hero-grid">
           <div className="hero-copy">
             <h1>
-              Medicina começa
-              <span>do outro lado da ponte.</span>
+              Medicina sem vestibular.
+              <span>Desde R$ 1.500 · turma 2026.2</span>
             </h1>
 
             <p className="hero-desc">
-              Estude em Ciudad del Este, more em Foz do Iguaçu e conte com uma equipe
-              presente em cada etapa — da matrícula ao preparo para o CRM.
-              Na UCP, a prática acontece em Hospital Universitário próprio.
+              Estude em Ciudad del Este, more em Foz. Ingresso novo ou transferência com aproveitamento de matérias.
             </p>
 
             <div className="hero-actions">
-              <a href="#formulario" className="btn btn-primary btn-lg">
-                Analisar meu ingresso <ArrowRight size={18} />
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp btn-lg">
+                <MessageCircle size={19} /> Falar no WhatsApp
               </a>
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="btn btn-quiet">
-                <MessageCircle size={19} /> Falar com um orientador
+              <a href="#formulario" className="btn btn-quiet">
+                Deixar meu contato
               </a>
             </div>
           </div>
@@ -64,7 +62,7 @@ export default function Hero() {
             <dl className="route-data">
               <div>
                 <dt>Ingresso</dt>
-                <dd>Sem vestibular tradicional</dd>
+                <dd>Sem vestibular · transferência com aproveitamento</dd>
               </div>
               <div>
                 <dt>Mensalidade</dt>

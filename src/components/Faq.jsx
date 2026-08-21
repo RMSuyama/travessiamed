@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { HelpCircle, ChevronDown } from 'lucide-react';
 import { siteConfig } from '../data/siteContent';
@@ -15,11 +17,11 @@ export default function Faq() {
             <HelpCircle size={16} />
             <span>Dúvidas Frequentes</span>
           </div>
-          <h2 style={{ marginBottom: '14px' }}>
-            Perguntas e Respostas Transparentes
+          <h2 style={{ marginBottom: '12px' }}>
+            Perguntas frequentes
           </h2>
           <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)' }}>
-            Entenda todos os detalhes sobre a legalidade, o curso, a revalidação e a vida universitária no Paraguai.
+            Diploma, vestibular, transferência com aproveitamento, moradia e o que os pais mais perguntam.
           </p>
         </div>
 

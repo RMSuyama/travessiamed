@@ -1,5 +1,8 @@
+'use client';
+
 import React, { useState } from 'react';
 import { Calculator } from 'lucide-react';
+import { siteConfig } from '../data/siteContent';
 
 // Valores mensais estimados em reais divulgados pela UCP para 2026.2 (câmbio 1.190).
 // Os valores oficiais são fixados em guaranis e variam em reais conforme o câmbio.
@@ -184,8 +187,14 @@ export default function SavingsCalculator() {
           </div>
 
           <div style={{ textAlign: 'center', marginTop: '24px' }}>
-            <a href="#formulario" className="btn btn-primary" style={{ padding: '14px 28px' }}>
-              Quero Planejar Meu Ingresso
+            <a
+              href={`https://wa.me/${siteConfig.contact.whatsappNumber}?text=${encodeURIComponent(siteConfig.contact.whatsappMessage)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-whatsapp"
+              style={{ padding: '14px 28px' }}
+            >
+              Quero planejar no WhatsApp
             </a>
           </div>
 

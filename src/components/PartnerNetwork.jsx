@@ -1,6 +1,8 @@
+'use client';
+
 import React, { useState } from 'react';
 import { CheckCircle2, Handshake, MessageCircle, ShieldCheck } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { siteConfig } from '../data/siteContent';
 import { createWhatsAppUrl, submitContactForm } from '../utils/formSubmission';
 import { isFormLocked, lockForm } from '../utils/formGuard';
@@ -65,7 +67,7 @@ export default function PartnerNetwork() {
     <section id="parceiros" className="frame frame-navy">
       <div className="container partner-network-grid">
         <div>
-          <Link to="/" className="route-back-link route-back-link-dark">← Voltar para Medicina no Paraguai</Link>
+          <Link href="/" className="route-back-link route-back-link-dark">← Voltar para Medicina no Paraguai</Link>
           <div className="badge-pill">
             <Handshake size={16} />
             <span>Rede local de confiança</span>
@@ -210,7 +212,7 @@ export default function PartnerNetwork() {
                 <label className="data-consent">
                   <input type="checkbox" required />
                   <span>
-                    Li a <Link to="/privacidade">Política de Privacidade</Link> e autorizo o
+                    Li a <Link href="/privacidade">Política de Privacidade</Link> e autorizo o
                     tratamento dos dados para análise do cadastro e contato.
                   </span>
                 </label>

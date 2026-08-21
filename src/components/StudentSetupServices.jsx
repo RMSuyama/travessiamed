@@ -1,6 +1,6 @@
 import React from 'react';
 import { CalendarCheck2, Truck } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { siteConfig } from '../data/siteContent';
 
 const services = [
@@ -29,7 +29,7 @@ export default function StudentSetupServices() {
   return (
     <section id="instalacao" className="frame frame-white">
       <div className="container">
-        <Link to="/" className="route-back-link">← Voltar para Medicina no Paraguai</Link>
+        <Link href="/" className="route-back-link">← Voltar para Medicina no Paraguai</Link>
         <div className="section-intro">
           <div className="badge-pill badge-green">
             <Truck size={16} />
@@ -69,7 +69,7 @@ export default function StudentSetupServices() {
             Disponibilidade e valores variam conforme endereço e demanda.
           </p>
           <div className="service-partner-actions">
-            <Link to="/parceiros" className="btn btn-navy">
+            <Link href="/parceiros" className="btn btn-navy">
               Quero ser parceiro
             </Link>
             <a

@@ -1,13 +1,15 @@
 import React from 'react';
 import { HeartHandshake, ShieldCheck, CheckCircle2, MessageCircle } from 'lucide-react';
 import { siteConfig } from '../data/siteContent';
+import PageBack from './PageBack';
 
-export default function ParentsSupport() {
+export default function ParentsSupport({ showBack = false }) {
   const whatsappParentsUrl = `https://wa.me/${siteConfig.contact.whatsappNumber}?text=${encodeURIComponent(siteConfig.contact.whatsappParentsMessage)}`;
 
   return (
     <section id="familia" className="frame frame-navy">
       <div className="container">
+        {showBack && <PageBack dark />}
         <div className="family-panel">
           <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '40px', alignItems: 'center' }} className="hero-grid">
             

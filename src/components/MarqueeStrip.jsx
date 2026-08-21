@@ -5,6 +5,7 @@ const ITEMS = [
   'Foz do Iguaçu',
   'Enamed INEP também no Brasil',
   'Revalida com mentoria',
+  'Transferência com aproveitamento',
   'Sem vestibular tradicional',
   'Mensalidade a partir de R$ 1.500',
   'Turmas 2026.2 e 2027.1',

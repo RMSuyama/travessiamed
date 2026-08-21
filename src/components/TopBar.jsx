@@ -1,6 +1,6 @@
 import React from 'react';
 import { Phone } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { siteConfig } from '../data/siteContent';
 
 export default function TopBar() {
@@ -11,8 +11,8 @@ export default function TopBar() {
       <div className="container utility-bar-inner">
         <p><span>BR</span> Foz do Iguaçu <b>↔</b> Ciudad del Este <span>PY</span></p>
         <div className="utility-links">
-          <Link to="/#calculadora">
-            Calcular investimento
+          <Link href="/custos">
+            Ver mensalidades
           </Link>
           <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
             <Phone size={13} /> Plantão de admissões

@@ -1,12 +1,13 @@
 import React from 'react';
 import { HelpCircle, CheckCircle2, AlertCircle } from 'lucide-react';
 import { siteConfig } from '../data/siteContent';
+import PageBack from './PageBack';
 
-export default function MythsAndFacts() {
+export default function MythsAndFacts({ showBack = false }) {
   return (
     <section id="mitos" className="frame frame-white">
       <div className="container">
-        
+        {showBack && <PageBack />}
         <div className="section-intro">
           <div className="badge-pill badge-navy" style={{ marginBottom: '12px' }}>
             <HelpCircle size={16} />

@@ -16,7 +16,7 @@ export const siteConfig = {
 
   contact: {
     whatsappNumber: "595982399595", // +595 982 399595 — Paraguay
-    whatsappMessage: "Olá! Gostaria de conversar com a equipe da Travessia Med sobre Medicina na UCP e UNADES.",
+    whatsappMessage: "Olá! Quero informações sobre Medicina na UCP/UNADES: turma 2026.2 ou transferência com aproveitamento de matérias.",
     whatsappParentsMessage: "Olá! Sou pai/mãe de estudante e gostaria de conversar com a coordenação sobre a segurança, moradia e legalidade do curso no Paraguai.",
     phoneDisplay: "+595 982 399 595",
     locations: [
@@ -34,10 +34,10 @@ export const siteConfig = {
     ctaButtonText: "Quero Começar Meu Sonho",
     whatsappButtonText: "Falar com um Orientador",
     trustChecks: [
-      "Ingresso sem vestibular tradicional",
-      "UNADES a partir de R$ 1.500; UCP desde R$ 1.840 no 1º semestre",
-      "UCP com Hospital Universitário próprio em CDE",
-      "Você pode morar em Foz do Iguaçu (PR)"
+      "Sem vestibular tradicional",
+      "Transferência com aproveitamento",
+      "Desde R$ 1.500 / mês",
+      "Turma 2026.2 · vagas limitadas"
     ],
     infoCard: {
       nextTerms: "Turmas 2026.2 e 2027.1",
@@ -53,8 +53,8 @@ export const siteConfig = {
     {
       src: "/campaign/ucp-alunos.jpg",
       alt: "Alunos de Medicina da UCP em Ciudad del Este",
-      kicker: "Sem vestibular",
-      caption: "Matrículas 2026.2 abertas",
+      kicker: "Ingresso ou transferência",
+      caption: "Aproveitamento de matérias",
       objectPosition: "50% 28%"
     },
     {
@@ -88,6 +88,10 @@ export const siteConfig = {
       fact: "O Revalida é uma prova do INEP baseada na medicina prática — e prova do INEP deixou de ser 'só de quem estuda fora'. No Brasil, o Enamed (Exame Nacional de Avaliação da Formação Médica) já é obrigatório para concluintes e, agora, também para alunos do 4º ano. Quem estuda focado na matriz brasileira desde o 1º ano com a nossa mentoria chega preparado para a avaliação do INEP."
     },
     {
+      myth: "Se eu transferir, perco tudo o que já cursei?",
+      fact: "Não necessariamente. Analisamos o histórico e as ementas e pedimos o aproveitamento das matérias equivalentes na UCP ou UNADES. A validação final é da universidade — o objetivo é não te fazer recomeçar do zero."
+    },
+    {
       myth: "O diploma paraguaio é reconhecido no Brasil?",
       fact: "Sim! Após a conclusão do curso e a realização da prova do Revalida (lei federal brasileira nº 13.959), o diploma é apostilado e registrado em universidade pública brasileira, concedendo o CRM definitivo."
     }
@@ -97,23 +101,27 @@ export const siteConfig = {
   costOfLiving: [
     {
       item: "Mensalidade da Faculdade",
-      value: "UNADES: a partir de R$ 1.500 · UCP: R$ 1.840 no 1º semestre",
-      detail: "Matrícula UCP 2026.2: R$ 1.800 (única). Com desconto, o 1º semestre fica R$ 1.655 (câmbio 1.190 Gs/R$)."
+      shortItem: "Mensalidade",
+      value: "a partir de R$ 1.500",
+      detail: "UNADES desde R$ 1.500. UCP 1º semestre: R$ 1.840 (R$ 1.655 com desconto). Matrícula UCP: R$ 1.800."
     },
     {
-      item: "Moradia (Kitnet ou Apto Compartilhado)",
+      item: "Moradia (kitnet ou apto compartilhado)",
+      shortItem: "Moradia",
       value: "R$ 600 a R$ 1.200",
-      detail: "Opções mobiliadas e seguras em Foz do Iguaçu (PR) ou CDE"
+      detail: "Opções mobiliadas em Foz do Iguaçu (PR) ou Ciudad del Este."
     },
     {
-      item: "Alimentação & Supermercado",
+      item: "Alimentação e supermercado",
+      shortItem: "Alimentação",
       value: "R$ 600 a R$ 900",
-      detail: "Custo de alimentação acessível na região de fronteira"
+      detail: "Custo de alimentação na região de fronteira."
     },
     {
-      item: "Transporte / Van Estudantil Fronteiriça",
+      item: "Van estudantil fronteiriça",
+      shortItem: "Transporte",
       value: "R$ 300 a R$ 450",
-      detail: "Busca na porta do condomínio em Foz e deixa na faculdade"
+      detail: "Busca em Foz e deixa na faculdade em CDE."
     }
   ],
 
@@ -126,11 +134,10 @@ export const siteConfig = {
       badgeColor: "#d32f2f",
       badgeBg: "rgba(211, 47, 47, 0.1)",
       avatarBg: "#fef2f2",
-      description: "Uma das maiores referências médicas da fronteira, com Hospital Universitário próprio em Ciudad del Este. Conta com mesa anatômica 3D (Anatomage), laboratórios de microbiologia e histologia, e prática clínica real desde os primeiros semestres — teoria e prática juntas.",
+      description: "Hospital Universitário próprio em CDE, prática clínica desde o 1º semestre.",
       highlights: [
-        { label: "Sedes", value: "Ciudad del Este (fronteira com Foz do Iguaçu) e Pedro Juan Caballero" },
-        { label: "Prática Clínica", value: "Hospital Universitário próprio em CDE, clínicas e ambulatórios" },
-        { label: "Metodologia", value: "Teoria e prática desde o 1º semestre, com preparação ao Revalida" }
+        { label: "Sede", value: "Ciudad del Este, fronteira com Foz" },
+        { label: "Prática", value: "Hospital universitário próprio" }
       ],
       estimatedMonthlyBRL: 1840,
       monthlyLabel: "R$ 1.840",
@@ -149,11 +156,10 @@ export const siteConfig = {
       badgeColor: "#1b8a43",
       badgeBg: "rgba(27, 138, 67, 0.1)",
       avatarBg: "#f0fdf4",
-      description: "Destaca-se pelo acolhimento e turmas com tamanho ideal, permitindo contato direto com os médicos preceptores. Excelente relação custo-benefício, com infraestrutura moderna e convênios hospitalares consolidados.",
+      description: "Turmas menores, preceptores próximos e mensalidade a partir de R$ 1.500.",
       highlights: [
-        { label: "Sede", value: "Ciudad del Este (localização estratégica e segura)" },
-        { label: "Atenção Docente", value: "Professores próximos acompanhando sua evolução diária" },
-        { label: "Estágios", value: "Parcerias ativas em centros de saúde e hospitais" }
+        { label: "Sede", value: "Ciudad del Este" },
+        { label: "Estágios", value: "Convênios em hospitais e centros de saúde" }
       ],
       estimatedMonthlyBRL: 1500,
       monthlyLabel: "~R$ 1.500",
@@ -163,34 +169,29 @@ export const siteConfig = {
 
   comparisonTable: [
     {
-      aspect: "Ingresso no Curso",
-      brazil: "✕ Vestibulares concorridos (300+ por vaga) ou anos de cursinho",
-      paraguay: "✓ Matrícula direta e homologação de documentos escolares"
+      aspect: "Ingresso",
+      brazil: "Vestibular concorrido ou anos de cursinho",
+      paraguay: "Matrícula direta, sem vestibular tradicional"
+    },
+    {
+      aspect: "Transferência",
+      brazil: "Trancar, perder semestre ou recomeçar do zero",
+      paraguay: "Análise de ementas e aproveitamento de matérias"
     },
     {
       aspect: "Mensalidade",
-      brazil: "✕ R$ 10.000 a R$ 14.000 / mês (valor fixo desde o 1º ano)",
-      paraguay: "✓ UNADES a partir de R$ 1.500; UCP de R$ 1.840 a R$ 3.605 conforme o semestre (referência 2026.2)"
+      brazil: "R$ 10.000 a R$ 14.000 / mês",
+      paraguay: "UNADES a partir de R$ 1.500 · UCP desde R$ 1.840"
     },
     {
-      aspect: "Investimento em 6 Anos",
-      brazil: "✕ R$ 750.000 a R$ 1.000.000+",
-      paraguay: "✓ ~R$ 160.000 a R$ 200.000 no total dos 6 anos (sem endividamento familiar)"
+      aspect: "6 anos",
+      brazil: "R$ 750.000 a R$ 1.000.000+",
+      paraguay: "Cerca de R$ 160.000 a R$ 200.000"
     },
     {
-      aspect: "Documentação e Visto",
-      brazil: "Não se aplica",
-      paraguay: "✓ A Travessia Med faz todo o trâmite jurídico e consular"
-    },
-    {
-      aspect: "Onde Você Mora",
-      brazil: "Capitais com alto custo e trânsito",
-      paraguay: "✓ Foz do Iguaçu (PR) ou CDE com tranquilidade e baixo custo"
-    },
-    {
-      aspect: "Diploma & Exercício",
-      brazil: "✕ Não é mais 'CRM direto': Enamed (prova do INEP) obrigatório para concluintes e 4º ano",
-      paraguay: "✓ Revalida INEP com mentoria desde o 1º ano — no Brasil, a prova do INEP também passou a ser obrigatória"
+      aspect: "Diploma no Brasil",
+      brazil: "Enamed (prova do INEP) também passou a ser obrigatória",
+      paraguay: "Revalida INEP, com mentoria desde o 1º ano"
     }
   ],
 
@@ -198,22 +199,22 @@ export const siteConfig = {
     {
       number: "1",
       title: "Orientação & Reserva",
-      desc: "Conversamos com você e sua família, analisamos seu perfil, tiramos todas as dúvidas e garantimos sua vaga na turma."
+      desc: "Ingresso novo ou transferência: analisamos o histórico e protocolamos o aproveitamento de matérias."
     },
     {
       number: "2",
       title: "Documentação Blindada",
-      desc: "Cuidamos de tudo: Apostilamento de Haia, MEC e Ministério das Relações Exteriores do Paraguai, visto Mercosul e imigração."
+      desc: "Apostila de Haia, visto Mercosul e imigração — a gente cuida."
     },
     {
       number: "3",
       title: "Moradia & Recepção",
-      desc: "Ajudamos você a alugar um bom apartamento em Foz do Iguaçu ou CDE, escolher a melhor rota de transporte e fazer compras iniciais."
+      desc: "Ajudamos a achar moradia em Foz ou CDE e a rota até a faculdade."
     },
     {
       number: "4",
       title: "Acompanhamento & Revalida",
-      desc: "Não te deixamos sozinho após a matrícula: oferecemos mentoria contínua, materiais de apoio e simulados focados no CRM brasileiro."
+      desc: "Mentoria contínua focada no Revalida e no CRM brasileiro."
     }
   ],
 
@@ -246,40 +247,32 @@ export const siteConfig = {
 
   faq: [
     {
-      q: "O diploma obtido no Paraguai é válido para clinicar como médico no Brasil?",
-      a: "Sim! Para exercer a Medicina no Brasil com diploma obtido no exterior, o médico realiza o Revalida INEP (exame unificado aplicado pelo Governo Federal). As grades curriculares da UCP e da UNADES possuem carga horária superior à média brasileira e atendem a todos os requisitos do MEC e CFM."
+      q: "O diploma vale para clinicar no Brasil?",
+      a: "Sim. Depois da formatura, o caminho é o Revalida INEP. As grades da UCP e da UNADES atendem aos requisitos de carga horária. No Brasil, quem se forma aqui também faz prova do INEP (Enamed)."
     },
     {
-      q: "Só quem estuda no exterior precisa fazer prova do INEP?",
-      a: "Não. Quem se forma em Medicina no Brasil também precisa fazer prova do INEP agora: o Enamed (Exame Nacional de Avaliação da Formação Médica) é obrigatório para concluintes e, nesta edição, também para alunos do 4º ano. A participação é componente curricular e a ausência pode impedir a colação de grau. Ou seja, a avaliação nacional do INEP deixou de ser um diferencial negativo de quem estuda no Paraguai — o caminho do diploma estrangeiro continua sendo o Revalida, com mentoria da Travessia Med desde o 1º ano."
+      q: "Preciso de vestibular ou ENEM?",
+      a: "Não. O ingresso é por homologação do ensino médio. Quem já está em outra faculdade pode pedir transferência com aproveitamento. As vagas por turma são limitadas."
     },
     {
-      q: "Preciso fazer vestibular ou ter nota do ENEM para ingressar?",
-      a: "Não. O ingresso é feito por homologação documental e convalidação do ensino médio. O número de vagas por turma é limitado pelas normas das faculdades, por isso recomendamos a reserva antecipada."
+      q: "Dá para transferir de outra faculdade e aproveitar matérias?",
+      a: "Sim. Quem já faz Medicina ou outro curso da saúde (Biomedicina, Enfermagem, Farmácia, Fisioterapia) envia histórico e ementas. A gente analisa a grade, pede a validação junto à UCP ou UNADES e protocola o aproveitamento. A universidade dá a palavra final sobre a equivalência de cada disciplina."
     },
     {
-      q: "Como funciona morar em Foz do Iguaçu (Brasil) e estudar em Ciudad del Este (Paraguai)?",
-      a: "É a rotina da maioria dos brasileiros! Foz do Iguaçu e Ciudad del Este são cidades vizinhas separadas pela Ponte da Amizade. Existem vans estudantis que buscam os alunos na porta de casa em Foz e deixam na faculdade em 15 a 25 minutos com faixa exclusiva de travessia."
+      q: "Dá para morar em Foz e estudar em Ciudad del Este?",
+      a: "Sim — é a rotina da maioria. A travessia pela Ponte da Amizade leva cerca de 15 a 25 minutos de van estudantil."
     },
     {
-      q: "Quais documentos preciso providenciar para a matrícula na UCP?",
-      a: "A lista oficial da UCP CDE (2026.2) pede: cópia do RG; histórico escolar do ensino médio (original ou cópia autenticada); cópia da certidão de nascimento; CPF; celular, endereço e e-mail do aluno e do responsável; e antecedentes criminais. A Travessia Med cuida da Apostila de Haia, convalidações diplomáticas no Paraguai e visto."
+      q: "Quais documentos a UCP pede?",
+      a: "RG, histórico do ensino médio (original ou cópia autenticada), certidão de nascimento, CPF, celular, endereço e e-mail do aluno e do responsável, e antecedentes criminais. A Travessia Med cuida de Apostila de Haia, convalidação e visto."
     },
     {
       q: "Quanto custa a matrícula na UCP?",
-      a: "A taxa de matrícula divulgada pela UCP CDE para 2026.2 é R$ 1.800. Ela é cobrada uma vez, à parte da mensalidade. No 1º semestre, a mensalidade regular é cerca de R$ 1.840 (R$ 1.655 com desconto promocional, câmbio 1.190 Gs por R$ 1,00)."
+      a: "R$ 1.800, cobrada uma vez. A mensalidade do 1º semestre é cerca de R$ 1.840 (R$ 1.655 com desconto, câmbio 1.190)."
     },
     {
-      q: "Como os pais podem acompanhar o processo?",
-      a: "Temos um canal direto e exclusivo para pais e responsáveis, com relatórios de status da documentação, visitas guiadas às faculdades e suporte presencial na recepção e escolha de moradia em Foz do Iguaçu."
-    },
-    {
-      q: "A Travessia Med também ajuda com carreto e mudança?",
-      a: "Ajudamos a conectar o estudante a prestadores locais para carreto e mudança. Esses serviços são executados por parceiros independentes, dependem de disponibilidade e possuem orçamento separado da assessoria educacional."
-    },
-    {
-      q: "É possível fazer transferência se já iniciei outro curso na área da saúde?",
-      a: "Sim! Se você já cursou períodos de Medicina, Biomedicina, Enfermagem, Farmácia ou Fisioterapia, fazemos a análise de ementas para dispensar disciplinas equivalentes."
+      q: "Os pais acompanham o processo?",
+      a: "Sim. Há canal direto para responsáveis, status da documentação e apoio presencial na escolha de moradia em Foz."
     }
   ]
 };

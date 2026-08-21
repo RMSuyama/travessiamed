@@ -14,10 +14,10 @@ export default function Universities() {
             <span>Instituições Habilitadas & Reconhecidas</span>
           </div>
           <h2 style={{ marginBottom: '16px' }}>
-            Universidades Parceiras Oficiais
+            UCP e UNADES
           </h2>
           <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)' }}>
-            Trabalhamos exclusivamente com universidades de renome, que possuem infraestrutura hospitalar, laboratórios modernos de simulação e corpo docente qualificado.
+            Duas instituições em Ciudad del Este, com prática hospitalar, ingresso direto e transferência com aproveitamento de matérias.
           </p>
         </div>
 

@@ -12,11 +12,11 @@ export default function Testimonials() {
             <UserCheck size={16} />
             <span>Histórias de Quem Já Está no Caminho</span>
           </div>
-          <h2 style={{ marginBottom: '16px' }}>
-            Depoimentos de Estudantes e Famílias
+          <h2 style={{ marginBottom: '12px' }}>
+            Quem já fez a travessia
           </h2>
           <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)' }}>
-            A confiança de quem sonhava em vestir o jaleco e encontrou na Travessia Med o caminho seguro e humanizado.
+            Famílias, alunos e médicos revalidados.
           </p>
         </div>
 

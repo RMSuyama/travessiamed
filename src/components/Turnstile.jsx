@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useEffect, useRef } from 'react';
 
 const SCRIPT_ID = 'cloudflare-turnstile-script';
@@ -30,7 +32,7 @@ export default function Turnstile({ onVerify, onError, resetKey = 0 }) {
   const widgetIdRef = useRef();
   const verifyRef = useRef(onVerify);
   const errorRef = useRef(onError);
-  const siteKey = import.meta.env.VITE_TURNSTILE_SITE_KEY;
+  const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
   verifyRef.current = onVerify;
   errorRef.current = onError;

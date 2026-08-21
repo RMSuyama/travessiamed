@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useEffect, useMemo, useState } from 'react';
 import { LogOut, MessageCircle } from 'lucide-react';
 import { supabase } from '../utils/supabaseClient';
@@ -344,7 +346,7 @@ export default function SharkPage() {
         <form className="shark-editor" onSubmit={saveEdit}>
           <div className="shark-editor-head">
             <p>Corrigir dados</p>
-            <span>{editing.google_email || 'sem Gmail'}</span>
+            <span>{editing.google_email || 'sem e-mail'}</span>
             <button type="button" onClick={() => setEditing(null)}>Fechar</button>
           </div>
           <div className="shark-editor-grid">

@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useMemo, useRef, useState } from 'react';
 import Turnstile from './Turnstile';
 
@@ -38,7 +40,7 @@ function MathCaptcha({ onVerify }) {
 }
 
 export default function FormCaptcha({ onVerify, onError, resetKey = 0 }) {
-  const siteKey = import.meta.env.VITE_TURNSTILE_SITE_KEY;
+  const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
   if (siteKey) {
     return <Turnstile resetKey={resetKey} onVerify={onVerify} onError={onError} />;

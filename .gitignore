@@ -10,6 +10,14 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+.next
+out
+tmp-docs-2026/
+tmp-fonts/
+.cursor/
+_material_2026_2/
+*.zip
+canva/
 *.local
 tmp-docs-2026/
 .env

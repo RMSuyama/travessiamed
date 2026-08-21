@@ -1,6 +1,6 @@
 import React from 'react';
 import { MapPin, Phone } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { siteConfig } from '../data/siteContent';
 
 export default function Footer() {
@@ -43,14 +43,14 @@ export default function Footer() {
           <div>
             <h4 style={{ color: '#ffffff', fontSize: '1rem', marginBottom: '16px' }}>Links Rápidos</h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.9rem' }}>
-              <li><Link to="/#universidades" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Universidade UCP (Ley 3153/06)</Link></li>
-              <li><Link to="/#universidades" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Medicina UNADES</Link></li>
-              <li><Link to="/#comparativo" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Comparativo de Custos</Link></li>
-              <li><Link to="/#pilares" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Assessoria Documental & Visto</Link></li>
-              <li><Link to="/servicos" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Carreto e mudança</Link></li>
-              <li><Link to="/parceiros" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Faça parte da rede de parceiros</Link></li>
-              <li><Link to="/#faq" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Dúvidas sobre o Revalida</Link></li>
-              <li><Link to="/privacidade" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Privacidade, LGPD e Termos</Link></li>
+              <li><Link href="/#universidades" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Universidade UCP (Ley 3153/06)</Link></li>
+              <li><Link href="/#universidades" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Medicina UNADES</Link></li>
+              <li><Link href="/custos" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Custos, custo de vida e simulador</Link></li>
+              <li><Link href="/familia" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Espaço da família</Link></li>
+              <li><Link href="/duvidas" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Mitos, verdades e dúvidas</Link></li>
+              <li><Link href="/servicos" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Carreto e mudança</Link></li>
+              <li><Link href="/parceiros" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Faça parte da rede de parceiros</Link></li>
+              <li><Link href="/privacidade" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Privacidade, LGPD e Termos</Link></li>
             </ul>
           </div>
 

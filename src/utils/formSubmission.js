@@ -1,5 +1,4 @@
 import { supabasePublic } from './supabaseClient';
-import { isGmailAddress } from './useAuth';
 
 const TYPE_LABELS = {
   admission: 'Pré-matrícula / admissão',
@@ -13,6 +12,10 @@ function readText(value, maxLength, required = false) {
   return text;
 }
 
+function isEmailAddress(value) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
+
 export function createWhatsAppUrl(number, message) {
   return `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
 }
@@ -22,9 +25,9 @@ export async function submitContactForm(payload) {
     return { success: true };
   }
 
-  const googleEmail = readText(payload.googleEmail || payload.email, 160, true).toLowerCase();
-  if (!isGmailAddress(googleEmail)) {
-    throw new Error('Informe um Gmail válido, por exemplo nome@gmail.com.');
+  const emailRaw = readText(payload.googleEmail || payload.email, 160);
+  if (emailRaw && !isEmailAddress(emailRaw)) {
+    throw new Error('Informe um e-mail válido ou deixe o campo em branco.');
   }
 
   const type = readText(payload.type, 20, true);
@@ -41,13 +44,13 @@ export async function submitContactForm(payload) {
     housing: readText(payload.housing, 160) || null,
     experience: readText(payload.experience, 1200) || null,
     source: readText(payload.source, 300) || null,
-    google_email: googleEmail
+    google_email: emailRaw ? emailRaw.toLowerCase() : null
   };
 
   const { error } = await supabasePublic.from('contacts').insert(row);
   if (error) {
     if (error.code === '23505') {
-      throw new Error('Este Gmail já enviou. Se algo estiver errado, fale com a equipe para corrigirmos no painel.');
+      throw new Error('Este contato já enviou. Fale no WhatsApp que a equipe atualiza o cadastro.');
     }
     console.error('Supabase insert error:', error.message);
     throw new Error('Não foi possível salvar agora. Tente novamente.');

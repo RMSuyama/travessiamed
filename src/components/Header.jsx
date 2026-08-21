@@ -1,25 +1,33 @@
-import React, { useState } from 'react';
-import { Menu, X } from 'lucide-react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+'use client';
+
+import { useState } from 'react';
+import { Menu, X, MessageCircle } from 'lucide-react';
+import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
 import { siteConfig } from '../data/siteContent';
+import { createWhatsAppUrl } from '../utils/formSubmission';
 import { scrollToView } from '../utils/viewNavigation';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const location = useLocation();
-  const navigate = useNavigate();
+  const pathname = usePathname();
+  const router = useRouter();
+  const whatsappUrl = createWhatsAppUrl(
+    siteConfig.contact.whatsappNumber,
+    siteConfig.contact.whatsappMessage
+  );
 
   const navigateToView = (event, id) => {
     event.preventDefault();
     setMobileMenuOpen(false);
 
-    if (location.pathname === '/') {
+    if (pathname === '/') {
       window.history.replaceState(null, '', `/#${id}`);
       scrollToView(id);
       return;
     }
 
-    navigate(`/#${id}`);
+    router.push(`/#${id}`);
   };
 
   return (
@@ -39,15 +47,16 @@ export default function Header() {
 
         <nav className="header-nav-desktop">
           <a href="/#universidades" onClick={(event) => navigateToView(event, 'universidades')}>Universidades</a>
+          <Link href="/custos" aria-current={pathname === '/custos' ? 'page' : undefined}>Custos</Link>
           <a href="/#pilares" onClick={(event) => navigateToView(event, 'pilares')}>Como funciona</a>
-          <a href="/#comparativo" onClick={(event) => navigateToView(event, 'comparativo')}>Brasil vs Paraguai</a>
           <a href="/#depoimentos" onClick={(event) => navigateToView(event, 'depoimentos')}>Alunos</a>
-          <Link to="/servicos" aria-current={location.pathname === '/servicos' ? 'page' : undefined}>Serviços</Link>
-          <a href="/#faq" onClick={(event) => navigateToView(event, 'faq')}>Dúvidas</a>
+          <Link href="/duvidas" aria-current={pathname === '/duvidas' ? 'page' : undefined}>Dúvidas</Link>
         </nav>
 
         <div className="header-cta-desktop">
-          <a href="/#formulario" className="btn btn-primary" onClick={(event) => navigateToView(event, 'formulario')}>Garantir minha vaga</a>
+          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp">
+            <MessageCircle size={16} /> WhatsApp
+          </a>
         </div>
 
         <button
@@ -62,15 +71,16 @@ export default function Header() {
 
       {mobileMenuOpen && (
         <div className="mobile-drawer">
-          <a href="/#universidades" onClick={(event) => navigateToView(event, 'universidades')}>Universidades (UCP & UNADES)</a>
-          <a href="/#pilares" onClick={(event) => navigateToView(event, 'pilares')}>Como funciona a assessoria</a>
-          <a href="/#comparativo" onClick={(event) => navigateToView(event, 'comparativo')}>Comparativo Brasil vs Paraguai</a>
-          <a href="/#calculadora" onClick={(event) => navigateToView(event, 'calculadora')}>Simulador de economia</a>
+          <a href="/#universidades" onClick={(event) => navigateToView(event, 'universidades')}>Universidades</a>
+          <Link href="/custos" onClick={() => setMobileMenuOpen(false)}>Custos e simulador</Link>
+          <a href="/#pilares" onClick={(event) => navigateToView(event, 'pilares')}>Como funciona</a>
+          <Link href="/familia" onClick={() => setMobileMenuOpen(false)}>Espaço da família</Link>
           <a href="/#depoimentos" onClick={(event) => navigateToView(event, 'depoimentos')}>Depoimentos</a>
-          <Link to="/servicos" onClick={() => setMobileMenuOpen(false)}>Carreto e mudança</Link>
-          <Link to="/parceiros" onClick={() => setMobileMenuOpen(false)}>Seja parceiro</Link>
-          <a href="/#faq" onClick={(event) => navigateToView(event, 'faq')}>Perguntas frequentes</a>
-          <a href="/#formulario" className="btn btn-primary" onClick={(event) => navigateToView(event, 'formulario')}>Garantir minha vaga</a>
+          <Link href="/duvidas" onClick={() => setMobileMenuOpen(false)}>Dúvidas</Link>
+          <Link href="/servicos" onClick={() => setMobileMenuOpen(false)}>Carreto e mudança</Link>
+          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp">
+            <MessageCircle size={16} /> Falar no WhatsApp
+          </a>
         </div>
       )}
     </header>
