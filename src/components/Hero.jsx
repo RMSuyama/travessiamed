@@ -74,7 +74,7 @@ export default function Hero() {
               </div>
               <div>
                 <dt>Instituições</dt>
-                <dd>UCP · UNADES</dd>
+                <dd>UCP e UNADES · habilitadas e credenciadas</dd>
               </div>
             </dl>
             <div className="route-stamp">

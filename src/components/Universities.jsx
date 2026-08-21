@@ -1,5 +1,6 @@
 import React from 'react';
 import { Building2, CheckCircle2 } from 'lucide-react';
+import Link from 'next/link';
 import { siteConfig } from '../data/siteContent';
 import CampaignFilm from './CampaignFilm';
 
@@ -11,13 +12,13 @@ export default function Universities() {
         <div className="section-intro">
           <div className="badge-pill badge-navy" style={{ marginBottom: '12px' }}>
             <Building2 size={16} />
-            <span>Instituições Habilitadas & Reconhecidas</span>
+            <span>Instituições Habilitadas & Credenciadas</span>
           </div>
           <h2 style={{ marginBottom: '16px' }}>
             UCP e UNADES
           </h2>
           <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)' }}>
-            Duas instituições em Ciudad del Este, com prática hospitalar, ingresso direto e transferência com aproveitamento de matérias.
+            As duas são habilitadas e credenciadas. Campus em Ciudad del Este, prática hospitalar, ingresso direto e transferência com aproveitamento de matérias.
           </p>
         </div>
 
@@ -129,6 +130,10 @@ export default function Universities() {
             </React.Fragment>
           ))}
         </div>
+
+        <Link href="/duvidas" className="section-continue">
+          Mitos, verdades e perguntas frequentes →
+        </Link>
 
       </div>
     </section>

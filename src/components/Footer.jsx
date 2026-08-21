@@ -43,8 +43,8 @@ export default function Footer() {
           <div>
             <h4 style={{ color: '#ffffff', fontSize: '1rem', marginBottom: '16px' }}>Links Rápidos</h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.9rem' }}>
-              <li><Link href="/#universidades" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Universidade UCP (Ley 3153/06)</Link></li>
-              <li><Link href="/#universidades" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Medicina UNADES</Link></li>
+              <li><a href="/#universidades" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>UCP — habilitada e credenciada</a></li>
+              <li><a href="/#universidades" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>UNADES — habilitada e credenciada</a></li>
               <li><Link href="/custos" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Custos, custo de vida e simulador</Link></li>
               <li><Link href="/familia" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Espaço da família</Link></li>
               <li><Link href="/duvidas" style={{ color: 'var(--on-dark-muted)', textDecoration: 'none' }}>Mitos, verdades e dúvidas</Link></li>

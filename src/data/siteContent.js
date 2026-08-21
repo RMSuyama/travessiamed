@@ -129,7 +129,7 @@ export const siteConfig = {
     {
       id: "ucp",
       name: "UCP - Universidad Central del Paraguay",
-      sealTag: "Ley Nº 3153/06 • Reconhecida",
+      sealTag: "Habilitada & Credenciada",
       sealInitial: "C",
       badgeColor: "#d32f2f",
       badgeBg: "rgba(211, 47, 47, 0.1)",
@@ -137,7 +137,8 @@ export const siteConfig = {
       description: "Hospital Universitário próprio em CDE, prática clínica desde o 1º semestre.",
       highlights: [
         { label: "Sede", value: "Ciudad del Este, fronteira com Foz" },
-        { label: "Prática", value: "Hospital universitário próprio" }
+        { label: "Prática", value: "Hospital universitário próprio" },
+        { label: "Base legal", value: "Ley Nº 3153/06" }
       ],
       estimatedMonthlyBRL: 1840,
       monthlyLabel: "R$ 1.840",

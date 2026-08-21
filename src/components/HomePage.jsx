@@ -4,6 +4,7 @@ import Comparison from './Comparison';
 import ProcessSteps from './ProcessSteps';
 import Testimonials from './Testimonials';
 import LeadForm from './LeadForm';
+import ExplorePages from './ExplorePages';
 
 export default function HomePage() {
   return (
@@ -14,6 +15,7 @@ export default function HomePage() {
       <LeadForm />
       <ProcessSteps />
       <Testimonials />
+      <ExplorePages />
     </>
   );
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { UserCheck } from 'lucide-react';
+import Link from 'next/link';
 import { siteConfig } from '../data/siteContent';
 
 export default function Testimonials() {
@@ -43,6 +44,10 @@ export default function Testimonials() {
             </div>
           ))}
         </div>
+
+        <Link href="/familia" className="section-continue">
+          Espaço da família →
+        </Link>
 
       </div>
     </section>

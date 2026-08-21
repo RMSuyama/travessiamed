@@ -58,9 +58,14 @@ export default function ProcessSteps() {
           })}
         </div>
 
-        <Link href="/familia" className="section-continue">
-          Espaço da família: canal para pais e responsáveis →
-        </Link>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px 28px' }}>
+          <Link href="/familia" className="section-continue">
+            Espaço da família: canal para pais e responsáveis →
+          </Link>
+          <Link href="/servicos" className="section-continue">
+            Carreto e mudança →
+          </Link>
+        </div>
 
       </div>
     </section>

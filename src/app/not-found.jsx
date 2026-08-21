@@ -1,5 +1,10 @@
-import { redirect } from 'next/navigation';
+import SiteShell from '../components/SiteShell';
+import NotFoundPage from '../components/NotFoundPage';
 
 export default function NotFound() {
-  redirect('/');
+  return (
+    <SiteShell>
+      <NotFoundPage />
+    </SiteShell>
+  );
 }

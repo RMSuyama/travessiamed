@@ -9,23 +9,30 @@ import WhatsAppFloating from './WhatsAppFloating';
 import { initAntigravity } from '../motion/initAntigravity';
 import { scrollToView } from '../utils/viewNavigation';
 
+function scrollToHash() {
+  const targetId = window.location.hash.replace('#', '');
+  if (targetId) {
+    scrollToView(targetId);
+    return;
+  }
+  window.scrollTo({ top: 0, behavior: 'auto' });
+}
+
 export default function SiteShell({ children }) {
   const pathname = usePathname();
 
   useEffect(() => {
     const teardown = initAntigravity(document);
-    const targetId = window.location.hash.replace('#', '');
 
     const frame = window.requestAnimationFrame(() => {
-      if (targetId) {
-        scrollToView(targetId);
-      } else {
-        window.scrollTo({ top: 0, behavior: 'auto' });
-      }
+      window.requestAnimationFrame(scrollToHash);
     });
+
+    window.addEventListener('hashchange', scrollToHash);
 
     return () => {
       window.cancelAnimationFrame(frame);
+      window.removeEventListener('hashchange', scrollToHash);
       teardown?.();
     };
   }, [pathname]);
