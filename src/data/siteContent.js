@@ -10,43 +10,39 @@ export const siteConfig = {
   brand: {
     name: "TRAVESSIA MED",
     tagline: "Sua jornada médica começa aqui",
-    description: "Assessoria educacional humanizada. Cuidamos do seu acolhimento, visto, moradia em Foz ou CDE, matrícula na UCP/UNADES e mentoria Revalida para você realizar o sonho de ser médico.",
-    logoPath: "/travessia-med-mark.svg",
+    description: "Assessoria educacional humanizada. Cuidamos do seu acolhimento, visto, moradia em Foz ou CDE, matrícula na UCP e mentoria Revalida para você realizar o sonho de ser médico.",
+    logoPath: "/travessia-med-logo.png",
   },
 
   contact: {
     whatsappNumber: "595982399595", // +595 982 399595 — Paraguay
-    whatsappMessage: "Olá! Quero informações sobre Medicina na UCP/UNADES: turma 2026.2 ou transferência com aproveitamento de matérias.",
+    whatsappMessage: "Olá! Quero informações sobre Medicina na UCP: turma 2026.2 ou transferência com aproveitamento de matérias.",
     whatsappParentsMessage: "Olá! Sou pai/mãe de estudante e gostaria de conversar com a coordenação sobre a segurança, moradia e legalidade do curso no Paraguai.",
-    phoneDisplay: "+595 982 399 595",
-    locations: [
-      "Foz do Iguaçu - PR (Sede de Acolhimento Brasil)",
-      "Ciudad del Este - Alto Paraná (Sede Acadêmica Paraguai)"
-    ]
+    phoneDisplay: "+595 982 399 595"
   },
 
   hero: {
-    badge: "Assessoria de Acolhimento & Admissão • UCP & UNADES",
+    badge: "Assessoria de Acolhimento & Admissão • UCP",
     titleStart: "O seu sonho de ser",
     titleHighlight: "Médico",
     titleEnd: "começa agora. Sem anos perdidos no vestibular.",
-    description: "Você não precisa passar mais um ano na ansiedade do cursinho. Inicie sua faculdade de Medicina em instituições de excelência com quem cuida de você desde a escolha do apartamento até o seu CRM no Brasil.",
+    description: "Inicie Medicina na UCP com quem cuida de você desde a escolha do apartamento até o seu CRM no Brasil.",
     ctaButtonText: "Quero Começar Meu Sonho",
     whatsappButtonText: "Falar com um Orientador",
     trustChecks: [
       "Sem vestibular tradicional",
       "Transferência com aproveitamento",
-      "Desde R$ 1.500 / mês",
+      "Desde R$ 1.655 / mês",
       "Turma 2026.2 · vagas limitadas"
     ],
     infoCard: {
       nextTerms: "Turmas 2026.2 e 2027.1",
-      partnerUnis: "UCP & UNADES",
-      classLocations: "Ciudad del Este / PJC",
+      partnerUnis: "UCP",
+      classLocations: "Ciudad del Este",
       docSupport: "Acolhimento & Legal 100% Incluso"
     },
-    photo: "/campaign/ucp-hospital.jpg",
-    photoAlt: "Hospital Universitário da UCP em Ciudad del Este"
+    photo: "/campaign/travessia-med-hero.png",
+    photoAlt: "Travessia Med — assessoria para Medicina na UCP"
   },
 
   campaignGallery: [
@@ -89,7 +85,7 @@ export const siteConfig = {
     },
     {
       myth: "Se eu transferir, perco tudo o que já cursei?",
-      fact: "Não necessariamente. Analisamos o histórico e as ementas e pedimos o aproveitamento das matérias equivalentes na UCP ou UNADES. A validação final é da universidade — o objetivo é não te fazer recomeçar do zero."
+      fact: "Não necessariamente. Analisamos o histórico e as ementas e pedimos o aproveitamento das matérias equivalentes na UCP. A validação final é da universidade — o objetivo é não te fazer recomeçar do zero."
     },
     {
       myth: "O diploma paraguaio é reconhecido no Brasil?",
@@ -102,8 +98,8 @@ export const siteConfig = {
     {
       item: "Mensalidade da Faculdade",
       shortItem: "Mensalidade",
-      value: "a partir de R$ 1.500",
-      detail: "UNADES desde R$ 1.500. UCP 1º semestre: R$ 1.840 (R$ 1.655 com desconto). Matrícula UCP: R$ 1.800."
+      value: "a partir de R$ 1.655",
+      detail: "UCP 1º semestre: R$ 1.840 (R$ 1.655 com desconto, câmbio 1.190). Matrícula: R$ 1.800."
     },
     {
       item: "Moradia (kitnet ou apto compartilhado)",
@@ -131,12 +127,12 @@ export const siteConfig = {
       name: "UCP - Universidad Central del Paraguay",
       sealTag: "Habilitada & Credenciada",
       sealInitial: "C",
-      badgeColor: "#d32f2f",
-      badgeBg: "rgba(211, 47, 47, 0.1)",
+      badgeColor: "#e10613",
+      badgeBg: "rgba(225, 6, 19, 0.1)",
       avatarBg: "#fef2f2",
       description: "Hospital Universitário próprio em CDE, prática clínica desde o 1º semestre.",
       highlights: [
-        { label: "Sede", value: "Ciudad del Este, fronteira com Foz" },
+        { label: "Campus", value: "Ciudad del Este, fronteira com Foz" },
         { label: "Prática", value: "Hospital universitário próprio" },
         { label: "Base legal", value: "Ley Nº 3153/06" }
       ],
@@ -144,27 +140,7 @@ export const siteConfig = {
       monthlyLabel: "R$ 1.840",
       monthlyDiscountLabel: "R$ 1.655 com desconto",
       pricingReference: "1º semestre · tabela UCP 2026.2 · câmbio 1.190",
-      photo: "/campaign/ucp-ingresso.jpg",
-      photoAlt: "Campus, laboratório e alunos da Medicina UCP",
-      photoPosition: "50% 42%",
-      buttonText: "Conhecer a UCP"
-    },
-    {
-      id: "unades",
-      name: "UNADES - Medicina UNADES",
-      sealTag: "Habilitada & Credenciada",
-      sealInitial: "+",
-      badgeColor: "#1b8a43",
-      badgeBg: "rgba(27, 138, 67, 0.1)",
-      avatarBg: "#f0fdf4",
-      description: "Turmas menores, preceptores próximos e mensalidade a partir de R$ 1.500.",
-      highlights: [
-        { label: "Sede", value: "Ciudad del Este" },
-        { label: "Estágios", value: "Convênios em hospitais e centros de saúde" }
-      ],
-      estimatedMonthlyBRL: 1500,
-      monthlyLabel: "~R$ 1.500",
-      buttonText: "Conhecer a UNADES"
+      buttonText: "Quero a UCP"
     }
   ],
 
@@ -182,12 +158,12 @@ export const siteConfig = {
     {
       aspect: "Mensalidade",
       brazil: "R$ 10.000 a R$ 14.000 / mês",
-      paraguay: "UNADES a partir de R$ 1.500 · UCP desde R$ 1.840"
+      paraguay: "UCP desde R$ 1.840 (R$ 1.655 com desconto no 1º semestre)"
     },
     {
       aspect: "6 anos",
       brazil: "R$ 750.000 a R$ 1.000.000+",
-      paraguay: "Cerca de R$ 160.000 a R$ 200.000"
+      paraguay: "Cerca de R$ 195.000 na tabela UCP 2026.2"
     },
     {
       aspect: "Diploma no Brasil",
@@ -233,7 +209,7 @@ export const siteConfig = {
       quote: "Eu tinha muito receio da língua e da adaptação. Mas a equipe da assessoria me buscou na rodoviária, ajudou a mobiliar o apartamento e me apresentou a outros calouros. Hoje me sinto em casa.",
       initials: "GV",
       author: "Gabriel Vasconcelos",
-      role: "Estudante de Medicina do 2º Ano - UNADES",
+      role: "Estudante de Medicina do 2º Ano - UCP",
       color: "var(--gold-dark)"
     },
     {
@@ -249,7 +225,7 @@ export const siteConfig = {
   faq: [
     {
       q: "O diploma vale para clinicar no Brasil?",
-      a: "Sim. Depois da formatura, o caminho é o Revalida INEP. As grades da UCP e da UNADES atendem aos requisitos de carga horária. No Brasil, quem se forma aqui também faz prova do INEP (Enamed)."
+      a: "Sim. Depois da formatura, o caminho é o Revalida INEP. A grade da UCP atende aos requisitos de carga horária. No Brasil, quem se forma aqui também faz prova do INEP (Enamed)."
     },
     {
       q: "Preciso de vestibular ou ENEM?",
@@ -257,7 +233,7 @@ export const siteConfig = {
     },
     {
       q: "Dá para transferir de outra faculdade e aproveitar matérias?",
-      a: "Sim. Quem já faz Medicina ou outro curso da saúde (Biomedicina, Enfermagem, Farmácia, Fisioterapia) envia histórico e ementas. A gente analisa a grade, pede a validação junto à UCP ou UNADES e protocola o aproveitamento. A universidade dá a palavra final sobre a equivalência de cada disciplina."
+      a: "Sim. Quem já faz Medicina ou outro curso da saúde (Biomedicina, Enfermagem, Farmácia, Fisioterapia) envia histórico e ementas. A gente analisa a grade, pede a validação junto à UCP e protocola o aproveitamento. A universidade dá a palavra final sobre a equivalência de cada disciplina."
     },
     {
       q: "Dá para morar em Foz e estudar em Ciudad del Este?",

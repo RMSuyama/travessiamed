@@ -7,7 +7,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "oxlint"
+    "ucp:noticias": "node scripts/ucp-noticias.mjs",
+    "ucp:noticias:export": "node scripts/ucp-noticias.mjs --export",
+    "ucp:noticias:install": "powershell -ExecutionPolicy Bypass -File scripts/install-ucp-noticias-task.ps1"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.112.3",

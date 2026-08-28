@@ -9,7 +9,7 @@ const privacyChannel = `https://wa.me/${siteConfig.contact.whatsappNumber}?text=
 
 export default function LegalCenter() {
   return (
-    <section id="privacidade" className="frame frame-cream">
+    <section id="privacidade" className="frame frame-cream frame-flow">
       <div className="container">
         <Link href="/" className="route-back-link">← Voltar para Medicina no Paraguai</Link>
         <div className="section-intro">

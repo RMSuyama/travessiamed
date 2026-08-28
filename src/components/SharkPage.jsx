@@ -8,6 +8,7 @@ import {
   digitsOnly,
   normalizeEmail
 } from '../utils/adminAccess';
+import UcpNewsDesk from './UcpNewsDesk';
 
 const STATUS_OPTIONS = [
   { value: 'novo', label: 'Novo' },
@@ -36,6 +37,8 @@ export default function SharkPage() {
   const [busy, setBusy] = useState(false);
   const [editing, setEditing] = useState(null);
   const [saving, setSaving] = useState(false);
+  const [deskTab, setDeskTab] = useState('leads');
+  const [newsRows, setNewsRows] = useState([]);
 
   const email = normalizeEmail(session?.user?.email);
 
@@ -110,6 +113,14 @@ export default function SharkPage() {
     }
 
     setContacts(rows || []);
+
+    const { data: news } = await supabase
+      .from('ucp_noticias')
+      .select('id, published_at, source_url, title_pt, title_es, excerpt_pt, draft_caption_pt, used_for_post')
+      .order('published_at', { ascending: false })
+      .limit(200);
+    setNewsRows(news || []);
+
     return { error: '' };
   };
 
@@ -257,11 +268,17 @@ export default function SharkPage() {
       <header className="shark-bar">
         <p>Shark</p>
         <span>{email}</span>
+        <button type="button" onClick={() => setDeskTab('leads')}>Leads</button>
+        <button type="button" onClick={() => setDeskTab('ucp')}>UCP</button>
         <button type="button" onClick={() => supabase.auth.signOut()}>
           <LogOut size={14} /> Sair
         </button>
       </header>
 
+      {deskTab === 'ucp' ? (
+        <UcpNewsDesk rows={newsRows} onChange={loadDesk} />
+      ) : (
+        <>
       <section className="shark-toolbar">
         <input
           value={query}
@@ -387,6 +404,8 @@ export default function SharkPage() {
             {saving ? 'Salvando...' : 'Salvar correção'}
           </button>
         </form>
+      )}
+        </>
       )}
     </div>
   );

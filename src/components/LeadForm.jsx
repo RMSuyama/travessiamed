@@ -9,8 +9,8 @@ import { isFormLocked, lockForm } from '../utils/formGuard';
 
 function buildWhatsAppMessage({ fullName, state, path }) {
   const intent = path.includes('Transferência')
-    ? 'Quero transferência para Medicina na UCP/UNADES, com análise de aproveitamento de matérias.'
-    : 'Quero informações sobre Medicina na UCP/UNADES, turma 2026.2.';
+    ? 'Quero transferência para Medicina na UCP, com análise de aproveitamento de matérias.'
+    : 'Quero informações sobre Medicina na UCP, turma 2026.2.';
   return [
     `Olá! Meu nome é ${fullName}${state ? ` (${state})` : ''}.`,
     intent
@@ -49,7 +49,7 @@ export default function LeadForm() {
         googleEmail: formData.email,
         whatsapp: formData.whatsapp,
         location: formData.state,
-        interest: formData.path.includes('Transferência') ? 'Transferência UCP / UNADES' : 'UCP / UNADES',
+        interest: formData.path.includes('Transferência') ? 'Transferência UCP' : 'UCP',
         semester: formData.path,
         housing: 'Foz do Iguaçu (Brasil)',
         website: formData.website,
@@ -74,10 +74,6 @@ export default function LeadForm() {
     <section id="formulario" className="frame frame-navy-dark">
       <div className="container-narrow">
         <div className="lead-panel" style={{
-          background: 'rgba(255, 255, 255, 0.96)',
-          backdropFilter: 'blur(16px)',
-          WebkitBackdropFilter: 'blur(16px)',
-          borderRadius: 'var(--radius-xl)',
           padding: 'clamp(24px, 5vw, 44px)',
           color: 'var(--text-main)'
         }}>
@@ -95,7 +91,7 @@ export default function LeadForm() {
           </div>
 
           {formSubmitted ? (
-            <div style={{ textAlign: 'center', padding: '36px 16px', background: 'var(--success-soft)', borderRadius: 'var(--radius-md)', border: '1px solid rgba(0, 168, 132, 0.28)' }}>
+            <div style={{ textAlign: 'center', padding: '36px 16px', background: 'var(--success-soft)', border: '1px solid var(--scrub)' }}>
               <CheckCircle2 size={52} color="var(--success)" style={{ margin: '0 auto 16px' }} />
               <h3 style={{ fontSize: '1.4rem', color: 'var(--scrub-dark)', marginBottom: '8px' }}>Contato recebido</h3>
               <p style={{ color: 'var(--success)', fontSize: '0.95rem', marginBottom: '18px' }}>

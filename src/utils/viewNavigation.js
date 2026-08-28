@@ -1,6 +1,6 @@
 export function getViewOffset() {
-  const header = document.querySelector('.site-header');
-  return header ? Math.round(header.getBoundingClientRect().height) : 70;
+  const chrome = document.querySelector('.site-chrome') || document.querySelector('.site-header');
+  return chrome ? Math.round(chrome.getBoundingClientRect().height) : 70;
 }
 
 export function scrollToView(id) {

@@ -7,7 +7,7 @@ export default function ParentsSupport({ showBack = false }) {
   const whatsappParentsUrl = `https://wa.me/${siteConfig.contact.whatsappNumber}?text=${encodeURIComponent(siteConfig.contact.whatsappParentsMessage)}`;
 
   return (
-    <section id="familia" className="frame frame-navy">
+    <section id="familia" className="frame frame-navy frame-flow">
       <div className="container">
         {showBack && <PageBack dark />}
         <div className="family-panel">
@@ -29,15 +29,15 @@ export default function ParentsSupport({ showBack = false }) {
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '32px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--on-dark)', fontSize: '0.95rem' }}>
-                  <CheckCircle2 size={18} color="#5ee0bf" style={{ flexShrink: 0 }} />
+                  <CheckCircle2 size={18} color="var(--scrub)" style={{ flexShrink: 0 }} />
                   <span>Acompanhamento direto e relatórios de status aos responsáveis</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--on-dark)', fontSize: '0.95rem' }}>
-                  <CheckCircle2 size={18} color="#5ee0bf" style={{ flexShrink: 0 }} />
+                  <CheckCircle2 size={18} color="var(--scrub)" style={{ flexShrink: 0 }} />
                   <span>Ajuda presencial na escolha de condomínios fechados em Foz do Iguaçu</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--on-dark)', fontSize: '0.95rem' }}>
-                  <CheckCircle2 size={18} color="#5ee0bf" style={{ flexShrink: 0 }} />
+                  <CheckCircle2 size={18} color="var(--scrub)" style={{ flexShrink: 0 }} />
                   <span>Total transparência sobre a legislação do Revalida no Brasil</span>
                 </div>
               </div>
@@ -53,14 +53,14 @@ export default function ParentsSupport({ showBack = false }) {
             <div style={{
               background: 'rgba(255, 255, 255, 0.05)',
               border: '1px solid rgba(255, 255, 255, 0.15)',
-              borderRadius: 'var(--radius-lg)',
+              borderRadius: '0',
               padding: '32px 28px',
               textAlign: 'center'
             }}>
               <div style={{
                 width: '60px',
                 height: '60px',
-                borderRadius: '50%',
+                borderRadius: '0',
                 background: 'var(--gold-subtle)',
                 color: 'var(--gold-light)',
                 display: 'flex',

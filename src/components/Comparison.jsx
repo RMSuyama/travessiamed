@@ -16,7 +16,7 @@ export default function Comparison() {
             O mesmo sonho, outro orçamento.
           </h2>
           <p>
-            Mensalidade a partir de R$ 1.500. Vida em Foz, aula em Ciudad del Este.
+            Mensalidade UCP a partir de R$ 1.655. Vida em Foz, aula em Ciudad del Este.
           </p>
         </div>
 
@@ -36,7 +36,7 @@ export default function Comparison() {
                 <th style={{ padding: '18px 20px', fontSize: '0.95rem', width: '22%' }}> </th>
                 <th style={{ padding: '18px 20px', fontSize: '0.95rem', width: '39%', background: 'rgba(255, 255, 255, 0.05)' }}>Brasil particular</th>
                 <th style={{ padding: '18px 20px', fontSize: '0.95rem', width: '39%', background: 'var(--navy-secondary)', color: 'var(--gold-light)' }}>
-                  Paraguai · UCP / UNADES
+                  Paraguai · UCP
                 </th>
               </tr>
             </thead>
@@ -57,7 +57,7 @@ export default function Comparison() {
                     <td style={{ padding: '16px 20px', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
                       {row.brazil}
                     </td>
-                    <td style={{ padding: '16px 20px', color: 'var(--scrub-dark)', fontWeight: '600', background: 'rgba(0, 168, 132, 0.06)', fontSize: '0.9rem' }}>
+                    <td style={{ padding: '16px 20px', color: 'var(--scrub-dark)', fontWeight: '600', background: 'rgba(26, 92, 58, 0.08)', fontSize: '0.9rem' }}>
                       {row.paraguay}
                     </td>
                   </tr>

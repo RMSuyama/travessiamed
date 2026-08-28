@@ -64,7 +64,7 @@ export default function PartnerNetwork() {
   };
 
   return (
-    <section id="parceiros" className="frame frame-navy">
+    <section id="parceiros" className="frame frame-navy frame-flow">
       <div className="container partner-network-grid">
         <div>
           <Link href="/" className="route-back-link route-back-link-dark">← Voltar para Medicina no Paraguai</Link>

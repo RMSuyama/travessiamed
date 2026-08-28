@@ -23,6 +23,8 @@ tmp-docs-2026/
 .env
 .env.*
 !.env.example
+data/
+*.sqlite
 
 # Editor directories and files
 .vscode/*

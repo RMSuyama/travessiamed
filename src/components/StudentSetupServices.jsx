@@ -8,7 +8,7 @@ const services = [
     icon: Truck,
     title: 'Carreto e mudança local',
     description: 'Coleta e transporte de malas, caixas, móveis e eletrodomésticos entre Foz do Iguaçu e Ciudad del Este.',
-    color: 'var(--crossing)',
+    color: 'var(--royal)',
     background: 'var(--crossing-soft)'
   },
   {
@@ -27,7 +27,7 @@ export default function StudentSetupServices() {
   const whatsappUrl = `https://wa.me/${siteConfig.contact.whatsappNumber}?text=${message}`;
 
   return (
-    <section id="instalacao" className="frame frame-white">
+    <section id="instalacao" className="frame frame-white frame-flow">
       <div className="container">
         <Link href="/" className="route-back-link">← Voltar para Medicina no Paraguai</Link>
         <div className="section-intro">

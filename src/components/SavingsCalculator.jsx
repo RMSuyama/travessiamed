@@ -30,7 +30,7 @@ export default function SavingsCalculator() {
   const totalSavings = brazilTotal6Years - pyTotal6Years;
 
   return (
-    <section id="calculadora" className="frame frame-white">
+    <section id="calculadora" className="frame frame-white frame-flow">
       <div className="container-narrow">
 
         <div className="card-highlight">
@@ -60,7 +60,7 @@ export default function SavingsCalculator() {
               overflow: 'hidden'
             }}>
               <thead>
-                <tr style={{ backgroundColor: 'rgba(61, 99, 255, 0.1)' }}>
+                <tr style={{ backgroundColor: 'var(--paper-deep)' }}>
                   <th style={{
                     padding: '10px 14px',
                     fontWeight: '700',
@@ -138,7 +138,7 @@ export default function SavingsCalculator() {
               step="500"
               value={brazilTuition}
               onChange={(e) => setBrazilTuition(Number(e.target.value))}
-              style={{ width: '100%', accentColor: 'var(--navy-primary)', marginBottom: '8px' }}
+              style={{ width: '100%', accentColor: 'var(--signal)', marginBottom: '8px' }}
             />
             <div style={{ fontSize: '1.25rem', fontWeight: '800', color: 'var(--navy-primary)' }}>
               R$ {brazilTuition.toLocaleString('pt-BR')} / mês
@@ -169,7 +169,7 @@ export default function SavingsCalculator() {
               <div style={{ fontSize: '0.8rem', color: 'var(--on-dark-muted)', textTransform: 'uppercase', marginBottom: '4px' }}>
                 Custo no Paraguai
               </div>
-              <div style={{ fontSize: '1.25rem', fontWeight: '800', color: '#5ee0bf' }}>
+              <div style={{ fontSize: '1.25rem', fontWeight: '800', color: 'var(--scrub)' }}>
                 R$ {pyTotal6Years.toLocaleString('pt-BR')}
               </div>
               <div style={{ fontSize: '0.75rem', color: 'var(--on-dark-muted)' }}>tabela regular UCP 2026.2</div>
@@ -205,7 +205,7 @@ export default function SavingsCalculator() {
             fontSize: '0.78rem',
             color: 'var(--text-muted)',
             lineHeight: '1.6',
-            borderTop: '1px solid rgba(61, 99, 255, 0.24)',
+            borderTop: '1px solid rgba(5, 5, 5, 0.16)',
             paddingTop: '16px'
           }}>
             ⚠️ <strong>Aviso importante:</strong> A UCP fixa os valores originais em guaranis. Os valores em reais são estimativas da tabela oficial 2026.2 com câmbio de 1.190 Gs por R$ 1,00 e podem variar. Matrícula à parte: R$ 1.800. Descontos promocionais não foram considerados no total.

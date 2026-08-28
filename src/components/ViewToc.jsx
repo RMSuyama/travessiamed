@@ -5,7 +5,7 @@ import { scrollToView } from '../utils/viewNavigation';
 const pageToc = [
   { id: 'inicio', label: 'Início' },
   { id: 'mitos', label: 'Mitos e verdades' },
-  { id: 'universidades', label: 'Universidades' },
+  { id: 'universidades', label: 'UCP' },
   { id: 'comparativo', label: 'Brasil vs Paraguai' },
   { id: 'custo', label: 'Custo de vida' },
   { id: 'calculadora', label: 'Simulador' },

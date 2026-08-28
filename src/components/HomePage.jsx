@@ -5,6 +5,7 @@ import ProcessSteps from './ProcessSteps';
 import Testimonials from './Testimonials';
 import LeadForm from './LeadForm';
 import ExplorePages from './ExplorePages';
+import UcpNewsPreview from './UcpNewsPreview';
 
 export default function HomePage() {
   return (
@@ -15,6 +16,7 @@ export default function HomePage() {
       <LeadForm />
       <ProcessSteps />
       <Testimonials />
+      <UcpNewsPreview />
       <ExplorePages />
     </>
   );

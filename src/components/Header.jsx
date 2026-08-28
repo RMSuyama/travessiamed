@@ -30,21 +30,20 @@ export default function Header() {
       <div className="container header-bar">
         <a href="/#inicio" className="brand-lockup" onClick={(event) => goHomeSection(event, 'inicio')}>
           <span className="logo-mark">
-            <img src={siteConfig.brand.logoPath} alt={`Logo ${siteConfig.brand.name}`} />
+            <img src={siteConfig.brand.logoPath} alt="" />
           </span>
-          <div>
-            <div className="brand-wordmark">
-              TRAVESSIA <span>MED</span>
-            </div>
-            <div className="brand-tagline">{siteConfig.brand.tagline}</div>
-          </div>
+          <span className="brand-text">
+            <span className="brand-wordmark">TRAVESSIA MED</span>
+            <span className="brand-tagline">{siteConfig.brand.tagline}</span>
+          </span>
         </a>
 
         <nav className="header-nav-desktop">
-          <a href="/#universidades" onClick={(event) => goHomeSection(event, 'universidades')}>Universidades</a>
+          <a href="/#universidades" onClick={(event) => goHomeSection(event, 'universidades')}>UCP</a>
           <Link href="/custos" aria-current={pathname === '/custos' ? 'page' : undefined}>Custos</Link>
           <Link href="/familia" aria-current={pathname === '/familia' ? 'page' : undefined}>Família</Link>
           <Link href="/duvidas" aria-current={pathname === '/duvidas' ? 'page' : undefined}>Dúvidas</Link>
+          <Link href="/noticias-ucp" aria-current={pathname === '/noticias-ucp' ? 'page' : undefined}>Notícias</Link>
           <Link href="/servicos" aria-current={pathname === '/servicos' ? 'page' : undefined}>Mudança</Link>
         </nav>
 
@@ -66,12 +65,13 @@ export default function Header() {
 
       {mobileMenuOpen && (
         <div className="mobile-drawer">
-          <a href="/#universidades" onClick={(event) => goHomeSection(event, 'universidades')}>Universidades</a>
+          <a href="/#universidades" onClick={(event) => goHomeSection(event, 'universidades')}>UCP</a>
           <Link href="/custos" onClick={() => setMobileMenuOpen(false)}>Custos e simulador</Link>
           <a href="/#pilares" onClick={(event) => goHomeSection(event, 'pilares')}>Como funciona</a>
           <Link href="/familia" onClick={() => setMobileMenuOpen(false)}>Espaço da família</Link>
           <a href="/#depoimentos" onClick={(event) => goHomeSection(event, 'depoimentos')}>Depoimentos</a>
           <Link href="/duvidas" onClick={() => setMobileMenuOpen(false)}>Dúvidas</Link>
+          <Link href="/noticias-ucp" onClick={() => setMobileMenuOpen(false)}>Notícias da UCP</Link>
           <Link href="/servicos" onClick={() => setMobileMenuOpen(false)}>Carreto e mudança</Link>
           <Link href="/parceiros" onClick={() => setMobileMenuOpen(false)}>Parceiros</Link>
           <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp">

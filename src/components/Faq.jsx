@@ -9,7 +9,7 @@ export default function Faq() {
   const toggleFaq = (index) => setOpenFaq(openFaq === index ? null : index);
 
   return (
-    <section id="faq" className="frame frame-white">
+    <section id="faq" className="frame frame-white frame-flow">
       <div className="container-narrow">
         
         <div className="section-intro">

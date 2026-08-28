@@ -5,7 +5,9 @@ function prefersReducedMotion() {
 }
 
 function syncViewOffset() {
-  document.documentElement.style.setProperty('--view-offset', `${getViewOffset()}px`);
+  const offset = getViewOffset();
+  document.documentElement.style.setProperty('--view-offset', `${offset}px`);
+  document.documentElement.style.setProperty('--chrome', `${offset}px`);
 }
 
 export function initAntigravity(root = document) {

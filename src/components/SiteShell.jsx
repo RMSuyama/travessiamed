@@ -22,6 +22,8 @@ export default function SiteShell({ children }) {
   const pathname = usePathname();
 
   useEffect(() => {
+    document.documentElement.classList.toggle('is-home', pathname === '/');
+
     const teardown = initAntigravity(document);
 
     const frame = window.requestAnimationFrame(() => {
@@ -33,14 +35,17 @@ export default function SiteShell({ children }) {
     return () => {
       window.cancelAnimationFrame(frame);
       window.removeEventListener('hashchange', scrollToHash);
+      document.documentElement.classList.remove('is-home');
       teardown?.();
     };
   }, [pathname]);
 
   return (
     <div className="app-root">
-      <TopBar />
-      <Header />
+      <div className="site-chrome">
+        <TopBar />
+        <Header />
+      </div>
       <main>{children}</main>
       <Footer />
       <WhatsAppFloating />

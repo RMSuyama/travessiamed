@@ -5,7 +5,7 @@ import PageBack from './PageBack';
 
 export default function MythsAndFacts({ showBack = false }) {
   return (
-    <section id="mitos" className="frame frame-white">
+    <section id="mitos" className="frame frame-white frame-flow">
       <div className="container">
         {showBack && <PageBack />}
         <div className="section-intro">

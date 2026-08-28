@@ -11,7 +11,7 @@ const usefulPages = [
 
 export default function NotFoundPage() {
   return (
-    <section className="frame frame-white">
+    <section className="frame frame-white frame-flow">
       <div className="container-narrow">
         <p className="badge-pill badge-navy" style={{ marginBottom: '16px' }}>Página não encontrada</p>
         <h1 style={{ fontSize: 'clamp(2.4rem, 6vw, 4.2rem)', marginBottom: '16px' }}>Esse endereço não existe.</h1>

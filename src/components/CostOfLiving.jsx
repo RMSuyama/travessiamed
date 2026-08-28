@@ -6,13 +6,13 @@ import PageBack from './PageBack';
 export default function CostOfLiving({ showBack = false }) {
   const iconMap = [
     <GraduationCap key="graduation" size={22} color="var(--navy-primary)" />,
-    <Home key="home" size={22} color="var(--crossing)" />,
+    <Home key="home" size={22} color="var(--royal)" />,
     <Coffee key="coffee" size={22} color="var(--signal)" />,
     <Bus key="bus" size={22} color="var(--scrub)" />
   ];
 
   return (
-    <section id="custo" className="frame frame-cream-gold">
+    <section id="custo" className="frame frame-cream-gold frame-flow">
       <div className="container">
         {showBack && <PageBack />}
         <div className="section-intro">
@@ -34,7 +34,7 @@ export default function CostOfLiving({ showBack = false }) {
               <div style={{
                 width: '48px',
                 height: '48px',
-                borderRadius: '50%',
+                borderRadius: '0',
                 background: 'var(--bg-subtle)',
                 display: 'flex',
                 alignItems: 'center',

@@ -101,3 +101,146 @@ grant usage on schema public to anon, authenticated;
 grant insert on table public.contacts to anon, authenticated;
 grant select, update on table public.contacts to authenticated;
 grant select, insert, delete on table public.admin_allowlist to authenticated;
+
+-- Notícias da UCP (fonte oficial). O site público só lê título/resumo em PT.
+create table if not exists public.ucp_noticias (
+  id bigint generated always as identity primary key,
+  created_at timestamptz not null default now(),
+  fetched_at timestamptz not null default now(),
+  published_at date,
+  source_url text not null unique,
+  source_slug text,
+  category text,
+  title_es text,
+  title_pt text,
+  excerpt_es text,
+  excerpt_pt text,
+  body_es text,
+  body_pt text,
+  image_url text,
+  draft_caption_pt text,
+  used_for_post boolean not null default false,
+  used_at timestamptz
+);
+
+create index if not exists ucp_noticias_published_idx
+  on public.ucp_noticias (published_at desc nulls last, id desc);
+
+alter table public.ucp_noticias enable row level security;
+
+create or replace view public.ucp_noticias_public as
+select
+  id,
+  published_at,
+  source_url,
+  category,
+  title_pt,
+  excerpt_pt,
+  image_url
+from public.ucp_noticias
+where title_pt is not null and title_pt <> '';
+
+create table if not exists public.ingest_secrets (
+  name text primary key,
+  token text not null,
+  created_at timestamptz not null default now()
+);
+
+alter table public.ingest_secrets enable row level security;
+
+drop policy if exists ucp_noticias_public_select on public.ucp_noticias;
+drop policy if exists ucp_noticias_admin_all on public.ucp_noticias;
+drop policy if exists ingest_secrets_admin_all on public.ingest_secrets;
+
+create policy ucp_noticias_admin_select
+  on public.ucp_noticias
+  for select
+  to authenticated
+  using (public.is_admin());
+
+create policy ucp_noticias_admin_all
+  on public.ucp_noticias
+  for all
+  to authenticated
+  using (public.is_admin())
+  with check (public.is_admin());
+
+create policy ingest_secrets_admin_all
+  on public.ingest_secrets
+  for all
+  to authenticated
+  using (public.is_admin())
+  with check (public.is_admin());
+
+create or replace function public.ingest_ucp_noticias(p_token text, p_items jsonb)
+returns jsonb
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  n int := 0;
+begin
+  if p_token is null or p_token = '' or not exists (
+    select 1 from public.ingest_secrets
+    where name = 'ucp_noticias' and token = p_token
+  ) then
+    raise exception 'unauthorized';
+  end if;
+
+  insert into public.ucp_noticias (
+    source_url,
+    source_slug,
+    published_at,
+    category,
+    title_es,
+    title_pt,
+    excerpt_es,
+    excerpt_pt,
+    body_es,
+    body_pt,
+    image_url,
+    draft_caption_pt,
+    fetched_at
+  )
+  select
+    x->>'source_url',
+    x->>'source_slug',
+    nullif(x->>'published_at', '')::date,
+    x->>'category',
+    x->>'title_es',
+    x->>'title_pt',
+    x->>'excerpt_es',
+    x->>'excerpt_pt',
+    x->>'body_es',
+    x->>'body_pt',
+    x->>'image_url',
+    x->>'draft_caption_pt',
+    now()
+  from jsonb_array_elements(p_items) as x
+  on conflict (source_url) do update set
+    source_slug = excluded.source_slug,
+    published_at = coalesce(excluded.published_at, public.ucp_noticias.published_at),
+    category = excluded.category,
+    title_es = excluded.title_es,
+    title_pt = excluded.title_pt,
+    excerpt_es = excluded.excerpt_es,
+    excerpt_pt = excluded.excerpt_pt,
+    body_es = excluded.body_es,
+    body_pt = excluded.body_pt,
+    image_url = excluded.image_url,
+    draft_caption_pt = excluded.draft_caption_pt,
+    fetched_at = now();
+
+  get diagnostics n = row_count;
+  return jsonb_build_object('upserted', n);
+end;
+$$;
+
+revoke all on function public.ingest_ucp_noticias(text, jsonb) from public;
+grant execute on function public.ingest_ucp_noticias(text, jsonb) to anon, authenticated;
+
+grant select on table public.ucp_noticias to authenticated;
+grant select, update on table public.ucp_noticias to authenticated;
+grant select on public.ucp_noticias_public to anon, authenticated;
+grant select, insert, update, delete on table public.ingest_secrets to authenticated;

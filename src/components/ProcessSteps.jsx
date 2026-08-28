@@ -5,14 +5,14 @@ import { siteConfig } from '../data/siteContent';
 
 export default function ProcessSteps() {
   const iconMap = [
-    { icon: <FileText size={24} />, bg: 'var(--crossing-soft)', color: 'var(--crossing)' },
-    { icon: <ShieldCheck size={24} />, bg: 'var(--success-soft)', color: 'var(--scrub-dark)' },
-    { icon: <Home size={24} />, bg: 'var(--paper-deep)', color: 'var(--ink)' },
-    { icon: <HeartPulse size={24} />, bg: 'var(--gold-subtle)', color: 'var(--signal)' }
+    { icon: <FileText size={24} />, bg: 'var(--success-soft)', color: 'var(--scrub)' },
+    { icon: <ShieldCheck size={24} />, bg: 'var(--gold-subtle)', color: 'var(--signal)' },
+    { icon: <Home size={24} />, bg: '#d9e4f7', color: 'var(--royal)' },
+    { icon: <HeartPulse size={24} />, bg: 'var(--paper-deep)', color: 'var(--ink)' }
   ];
 
   return (
-    <section id="pilares" className="frame frame-blue-light">
+    <section id="pilares" className="frame frame-cream">
       <div className="container">
         
         <div className="section-intro">
@@ -36,7 +36,7 @@ export default function ProcessSteps() {
                 <div style={{
                   width: '48px',
                   height: '48px',
-                  borderRadius: '12px',
+                  borderRadius: '0',
                   background: currentIcon.bg,
                   color: currentIcon.color,
                   display: 'flex',
