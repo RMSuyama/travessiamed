@@ -1,4 +1,7 @@
-import { ucpNoticias } from '../data/ucpNoticias';
+'use client';
+
+import { useEffect, useState } from 'react';
+import { supabasePublic } from '../utils/supabaseClient';
 
 function formatDate(value) {
   if (!value) return '';
@@ -10,10 +13,38 @@ function formatDate(value) {
 }
 
 export default function UcpNewsFeed({ limit, compact = false }) {
-  const posts = limit ? ucpNoticias.slice(0, limit) : ucpNoticias;
+  const [posts, setPosts] = useState([]);
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    (async () => {
+      let query = supabasePublic
+        .from('ucp_noticias_public')
+        .select('id, title_pt, excerpt_pt, source_url, image_url, category, published_at')
+        .order('published_at', { ascending: false });
+
+      if (limit) query = query.limit(limit);
+
+      const { data } = await query;
+      if (!cancelled) {
+        setPosts(data || []);
+        setLoaded(true);
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [limit]);
+
+  if (!loaded) {
+    return <p className="section-note">Carregando notícias da UCP…</p>;
+  }
 
   if (!posts.length) {
-    return <p className="section-note">Nenhuma notícia exportada ainda.</p>;
+    return <p className="section-note">Nenhuma notícia publicada ainda.</p>;
   }
 
   return (
